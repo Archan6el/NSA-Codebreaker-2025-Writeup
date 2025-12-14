@@ -486,6 +486,11 @@ grep -R --binary-files=text -E '[A-Za-z0-9+/]{20,}={0,2}' .
 
 ![image2](./images/task3img2.png)
 
+The full Base64 was in the contents of the malicious binary itself, or more accurately, one of the memory sections that made up the malicious binary that was part of the `cat` file from earlier. The actual section of memory / the memory dump file it was in was `pid.1552.vma.0x557c6ca3d000-0x557c6ca3e000.dmp`. 
+
+![image3](./images/task3img3.png)
+
+
 Now we have the inputted file contents! Specifically:
 
 `

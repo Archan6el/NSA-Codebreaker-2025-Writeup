@@ -188,7 +188,7 @@ Submitting
 solves this task!
 
 
-As a sidenote, after looking back at this challenge for this writeup, it appears that I got the right answer but I didn't really follow the intended solve
+As a sidenote, after looking back at this task for this writeup, it appears that I got the right answer but I didn't really follow the intended solve
 
 So the malicous device is actually a malicious DNS server. By filtering for DNS, and working backwards since we know its assigned IPs now, specifically using `192.168.3.254`, we can see that it was providing malicious DNS responses to queries for `archive.ubuntu.com`
 

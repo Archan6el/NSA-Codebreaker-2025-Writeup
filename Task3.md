@@ -635,7 +635,7 @@ There we go! The answer is
 203.0.113.245 us.archive.ubuntu.com
 ```
 
-Submitting this solves this challenge!
+Submitting this solves this task!
 
 **Response**:
 > Good work! Let's head back to NSA headquarters to continue with this analysis.

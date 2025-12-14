@@ -10,9 +10,9 @@
 
 ### Solve: 
 
-For this challenge, we are given an EXT2 image and need to find the SHA-1 hash of a suspicious artifact. 
+For this task, we are given an EXT2 image and need to find the SHA-1 hash of a suspicious artifact. 
 
-This challenge was pretty straight forward. First, I unzipped the image and then mounted it at a directory I made on my system at `/mnt/task1`
+This task was pretty straight forward. First, I unzipped the image and then mounted it at a directory I made on my system at `/mnt/task1`
 
 ```
 unzip image.ext2.zip
@@ -66,7 +66,7 @@ P=20
 A=/app/www
 ```
 
-This seems pretty suspicious. Generating the SHA-1 hash of this file with the command below and submitting it solves this challenge!
+This seems pretty suspicious. Generating the SHA-1 hash of this file with the command below and submitting it solves this task!
 
 ```
 sha1sum etc/apk/macwszvxno
@@ -138,7 +138,7 @@ rm -f /bin/console
 rm -f /etc/runlevels/default/console
 ```
 
-However, `etc/apk/macwszvxno` still remains as we know, and thus is the malicious artifact the challenge is looking for. 
+However, `etc/apk/macwszvxno` still remains as we know, and thus is the malicious artifact the task is looking for. 
 
 **Response:**
 > Great job finding that artifact! Let's report what we found to DAFIN-SOC leadership.

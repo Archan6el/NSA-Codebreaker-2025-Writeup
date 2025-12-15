@@ -1453,6 +1453,7 @@ In my above Python code, I explicitly state which function (remember I renamed t
 Running the above script gets us:
 
 ```
+---- DAT_0010d580 len= 38
 UTF-8: /opt/dafin/intel/ops_brief_redteam.pdf
 hex: 2f6f70742f646166696e2f696e74656c2f6f70735f62726965665f7265647465616d2e706466
 

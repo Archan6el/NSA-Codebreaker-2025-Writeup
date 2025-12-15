@@ -15,7 +15,7 @@
 
 This one was probably my favorite task. 
 
-If you read my other write ups, you know that I usually use a combination of Ghidra and Binja. For this task though, Binja ended up being more useful (or at least, sort of easier to read the dissassembly compared to what Ghidra was giving me)
+If you read my other write ups, you know that I usually use a combination of Ghidra and Binja. For this task, Binja ended up being more useful at first (or at least, sort of easier to read the dissassembly compared to what Ghidra was giving me), and then I ended off the task with Ghidra. 
 
 First, we can load the binary, `suspicious`, into Binja and start looking at what we're working with
 

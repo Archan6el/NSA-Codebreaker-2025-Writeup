@@ -79,8 +79,9 @@ Firstly, in the `main` function, there's some weird sections like below
 00003158          
 00003161          if (r14_1(&brainrot2, 0x49, r15_3, 0x13) != 0)
 00003161              goto cooked
-
 ```
+
+Firstly, since you'll see it a lot later on, `cooked` is a label that essentially just contains some code that ends / exists the program. Whenever the binary reaches some sort of fail state, or you fail a debugger check, it jumps to this label.
 
 Ignoring my renaming of some labels, variables, and functions, the interesting thing is `r14_1` being assigned a value extracted from the memory of a brainrot string literal.
 
@@ -561,7 +562,7 @@ This check essentially performs an `execve` on the malware contents to run it as
 00005d98      noreturn
 ```
 
-Otherwise, it dynamically will load the shared library into a memfd
+Otherwise, it dynamically will load the shared library from a memfd
 
 First it creates a memfd
 

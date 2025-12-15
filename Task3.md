@@ -478,7 +478,7 @@ system("service dnsmasq restart");
 
 It is very clear what this binary does. It reads some sort of file into memory, which it assumes is in base64 format, decodes it, decrypts the result, writes the result to `/etc/hosts`, and restarts `dnsmasq`
 
-This is pretty obviously a malware, with the base64 encoded file very likely containing malicious DNS entries to have your system resolve domain names to malicious IPs. 
+This is pretty obviously a malware, with the base64 encoded file very likely containing malicious entries to have your system resolve domain names to malicious IPs. 
 
 The prompt asks us to "Submit a complete list of affected IPs and FQDNs, one per line", so we have to mimic this base64 decoding and decryption logic and use it on a file that was inputted to this malicious binary. 
 

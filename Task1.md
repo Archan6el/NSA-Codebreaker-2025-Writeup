@@ -118,7 +118,7 @@ cp a /bin/console
 cp b /etc/runlevels/default/console
 ```
 
-They then use `a`, which they name `/bin/console` to hide it (to make it look like the some legitimate binary), to write data to `/etc/apk/macwszvxno`, which appears to be storing malware parameters or something similar. 
+They then use `a`, which they name `/bin/console` to hide it (to make it look like some legitimate binary), to write data to `/etc/apk/macwszvxno`, which appears to be storing malware parameters or something similar. 
 
 ```
 /bin/console -s -o /etc/apk/macwszvxno

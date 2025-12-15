@@ -1307,6 +1307,10 @@ What we really want is that file name, since the goal of this task is to find th
 
 We can mimic this decryption logic with Python, but we have to decrypt each `DAT` in order starting with the very first `DAT`, since that's how the RC4 algorithm works. 
 
+Also, as for the contents of the `DATS` themselves, we can find them in Ghidra. Below is a small example:
+
+![image2](./images/task4img2.png)
+
 ```python
 
 # Decrypt all DAT blobs in the exact runtime order shown in the malware's run() -> download flow.

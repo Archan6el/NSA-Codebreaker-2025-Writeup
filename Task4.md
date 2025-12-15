@@ -207,7 +207,7 @@ result = rolling_xor_deobfuscate(key, key_len, blob3, data_len)
 print(result.decode('utf-8', errors='replace'))
 ```
 
-Runningn this results in:
+Running this results in:
 
 ```
 .init.checksum.vjag~oel2

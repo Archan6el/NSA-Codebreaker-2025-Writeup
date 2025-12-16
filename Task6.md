@@ -66,7 +66,7 @@ BOT_TOKEN=7k49bgbcob83dkr1w69j916cmr
 BOT_TEAM=malwarecentral
 ```
 
-The `BOT_TOKEN` can be found in the Mattermost database in the `useraccesstokens`
+The `BOT_TOKEN` can be found in the Mattermost database in the `useraccesstokens` table
 
 ```sql
 mattermost=# select * from useraccesstokens;

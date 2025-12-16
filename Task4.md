@@ -1059,7 +1059,7 @@ void rc4_ksa(long param_1,long param_2,ulong param_3)
 }
 ```
 
-It uses this keystream to decrypt a bunch of encrypted `DATS` in the binary. These `DATS` likely hold data that is sensitive for the binary, hence why it is encrypted. There are a couple `DATS` used in the check functions that are used to see if conditions are right for the malware to execute. You can see what exactly these checks are doing based on what I named the functions. I won't paste them here since they aren't that important. 
+It uses this keystream to decrypt a bunch of encrypted `DATS` in the binary. These `DATS` likely hold data that is sensitive for the binary, hence why they are encrypted. There are a couple `DATS` used in the check functions that are used to see if conditions are right for the malware to execute. You can see what exactly these checks are doing based on what I named the functions. I won't paste them here since they aren't that important. 
 
 
 ```c

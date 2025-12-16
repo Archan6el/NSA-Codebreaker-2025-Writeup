@@ -467,7 +467,7 @@ except Exception as e:
 
 This appears to be a pretty big flaw. That means that we can add users and ourselves to any channel, not just non-existent or archived channels. 
 
-The only requirement to do so is that the 3 users you try to run the `!nego` command with (the 2 users and the mod) cannot be in the channel you are trying to unarchive / add everyone to. 
+The only requirement to do so is that the 3 users you try to run the `!nego` command with (the 2 users and the mod) cannot be in the channel you are trying to add everyone to. 
 
 ```python
 existing_members = self.driver.channels.get_channel_members(channel_id)

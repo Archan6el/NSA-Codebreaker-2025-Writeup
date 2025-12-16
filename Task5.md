@@ -194,7 +194,7 @@ Well what do we see as the next message? (the second blue message)
 
 Exactly that. Then the remaining messages in the Wireshark transmission appear to be encrypted with the AES keys so we can't read them. However, we do have an idea of what they consist of. 
 
-Back looking at `full_handshake`, we see that it calls a function that I call `application_handshake`
+Looking back at `full_handshake`, we see that it calls a function that I call `application_handshake`
 
 ```c
     if (iVar1 == 0) {

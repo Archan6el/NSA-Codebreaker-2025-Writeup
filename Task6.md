@@ -80,7 +80,7 @@ Now we can run the bot
 
 ![image3](./images/task6img3.png)
 
-Looking at the code of the bot, which is all in Python, it appears that some commands can only be ran if your username begins with `mod_` or `admin_`, with the below example being just a little snippet of the commands you can run in a file named `plugin_admin.py`
+Looking at the code of the bot, which is all in Python, it appears that some commands can only be ran if your username begins with `mod_` or `admin_`, with the below example showing the commands you can run that are defined in a file named `plugin_admin.py`
 
 ```python
 from mmpy_bot import Plugin
@@ -122,7 +122,7 @@ Now, I can successfully run these commands
 
 It doesn't really look like this is going to get us anywhere though
 
-After some more digging in the bot's code, we find a very interesting file named `plugin_sales.py`
+After some more digging in the bot's code, we find a very interesting file named `plugin_sales.py` that defines some more commands
 
 ```python
 from mmpy_bot_monkeypatch import *  # Ensure monkeypatch is applied before anything else

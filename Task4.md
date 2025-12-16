@@ -1301,7 +1301,7 @@ assemble_path_helper(local_6f8,&DAT_0010d650,0x10,param_1);
 
 It then dynamically loads the file (which means it is expecting to download a shared library) and executes a function
 
-Again, a lot of the important details (like what the IP is, what request was sent, the file name, what function was executed, etc) are encrypted in the `DATS`. 
+Again, a lot of the important details (like what the IP is, what request was sent, the file path, what function was executed, etc) are encrypted in the `DATS`. 
 
 What we really want is that file name, since the goal of this task is to find the "file path the malware uses to write a file"
 

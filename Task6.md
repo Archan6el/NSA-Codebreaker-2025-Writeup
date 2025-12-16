@@ -53,7 +53,7 @@ It appears that this is some sort of public channel with some other bad actors i
 
 We can actually try to see who our target is by going into the PostgreSQL database and looking at the `users` table. 
 
-To save your eyes (Mattermost has a lot of columns in the `users` table), it appears the user we are trying to get into a channel with is `admin_insecureapricots73`. They are the only user designated as an admin. So, how exactly do we go about doing that?
+To save your eyes (Mattermost has a lot of columns in the `users` table), it appears the user we are trying to get into a channel with is `admin_insecureapricots73`. They are the only user designated as an admin, or at the very least, the only user with "admin" in their username. So, how exactly do we go about doing that?
 
 #### Robot Rock
 

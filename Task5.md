@@ -192,7 +192,7 @@ Well what do we see as the next message? (the second blue message)
     000001D9  45 44                                              ED
 ```
 
-Exactly that. Then the remaining messages in the Wireshark transmission appear to be encrypted with the AES key so we can't read them. However, we do have an idea of what they consist of. 
+Exactly that. Then the remaining messages in the Wireshark transmission appear to be encrypted with the AES keys so we can't read them. However, we do have an idea of what they consist of. 
 
 Back looking at `full_handshake`, we see that it calls a function that I call `application_handshake`
 
@@ -302,7 +302,7 @@ From my function naming, we can see that it generates two keys using a `gen_key`
 
 Why does it generate two keys and initialize two different AES ECB contexts?
 
-Well, if we look at how the binary sends messages, we can see that it performs some kind of custom encryption scheme on messages before it sends them
+Well, we've kind of already implied this a little bit earlier when going over the handshake functions, but if we look at how the binary sends messages, we can see that it performs some kind of custom encryption scheme on messages before it sends them
 
 ```c
 void custom_enc(undefined8 param_1,undefined8 param_2,undefined8 param_3,int param_4,

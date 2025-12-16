@@ -4,11 +4,11 @@ These are my writeups of the 2025 NSA Codebreaker Challenges
 
 **Background:**
 
->The Air Force's Cyber Operations Squadron is well known for developing tools to ensure the cyber dominance of the United States military. Advanced foreign adversary's, attempting to gather intelligence as well as >bolster their own cyber arsenal, are always searching for ways to infiltrate, sabotage, and steal.
->
->While the defenses in our military networks are robust, they are not impervious and continued vigilance and overwatch are a necessity. Yesterday, one savvy Department of the Air Force Security Operation Center >>(DAFIN-SOC) analyst noticed unusual behavior and reached out to the 616 Operations Center, and submitted a Request for Information (RFI) to the NSA for assistance.
->
->You have just begun the first tour in your Development Program at NSA with the Cyber Response Team and are looking to make a big impact. You have always read about the threat of Nation-State Advanced Persistent >Threats but now you have a chance to personally defend American interests against a sophisticated and capable adversary.
+> The Air Force's Cyber Operations Squadron is well known for developing tools to ensure the cyber dominance of the United States military. Advanced foreign adversary's, attempting to gather intelligence as well as bolster their own cyber arsenal, are always searching for ways to infiltrate, sabotage, and steal.
+
+> While the defenses in our military networks are robust, they are not impervious and continued vigilance and overwatch are a necessity. Yesterday, one savvy Department of the Air Force Security Operation Center (DAFIN-SOC) analyst noticed unusual behavior and reached out to the 616 Operations Center, and submitted a Request for Information (RFI) to the NSA for assistance.
+
+> You have just begun the first tour in your Development Program at NSA with the Cyber Response Team and are looking to make a big impact. You have always read about the threat of Nation-State Advanced Persistent Threats but now you have a chance to personally defend American interests against a sophisticated and capable adversary.
 
 ## Tasks
 - [Task 0 - (Community of Practice, Discord Server)](Task0.md)

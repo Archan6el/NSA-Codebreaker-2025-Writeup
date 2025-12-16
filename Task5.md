@@ -431,11 +431,11 @@ void __thiscall Comms::gen_key(Comms *this,uchar *param_1,int param_2)
 }
 ```
 
-This looks pretty complicated, but essentially, the key generation is flawed, since the majority of the key is actually zeroed out according to this disassembly
+This looks pretty complicated, but essentially, the key generation appears to be flawed, since the majority of the key is actually zeroed out according to this disassembly
 
 I wanted to be 100% sure of this however, since I also looked at the disassembly in Binja and it differed a little bit from the Ghidra disassembly. I did trust what Ghidra was giving us, but you can never be too sure. 
 
-I used Python to import this `gen_key` function and run it. First though I had to create a shared library wrapper to call said functions since the function symbols are all garbled
+I used Python to import this `gen_key` function and run it, just to test our theory. First though I had to create a shared library wrapper to call said function since the function symbols are all garbled
 
 ```cpp
 #include <cstdint>

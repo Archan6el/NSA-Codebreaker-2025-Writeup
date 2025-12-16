@@ -978,7 +978,7 @@ func main() {
 }
 ```
 
-We can run this like so
+We can run this like so after compiling it as `mitm-runner`
 
 ```
 ./mitm-runner -cipher <CIPHER> -tmp /tmp/mitmtmp -chunk 1048576 -workers 8

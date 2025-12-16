@@ -257,7 +257,7 @@ As for the last two messages, we have no idea what they are, and they probably h
 
 So we have to actually somehow decrypt these messages, but how do we do that?
 
-#### Finding the flaw
+#### The Achilles Heel
 
 Well, we can find the constructor for the `Comms` class
 
@@ -431,7 +431,7 @@ void __thiscall Comms::gen_key(Comms *this,uchar *param_1,int param_2)
 }
 ```
 
-This looks pretty complicated, but essentially, the key generation appears to be flawed, since the majority of the key is actually zeroed out according to this disassembly
+This looks pretty complicated, but essentially, the key generation appears to be flawed, since the majority of the key is actually zeroed out according to this disassembly. This is a huge weakness in the encryption scheme. 
 
 I wanted to be 100% sure of this however, since I also looked at the disassembly in Binja and it differed a little bit from the Ghidra disassembly. I did trust what Ghidra was giving us, but you can never be too sure. 
 
@@ -514,7 +514,7 @@ It appears that only the first 4 bytes of the keys actually contain data, while 
 
 Ok, so we know what we have to do. We have to brute force the correct keys since they are mathematically feasible to crack due to the much smaller key space (since only the first 4 bytes for each key matters), and we can check if we are correct since we already know the plaintext (`REQCONN` and `REQCONN_OK`, with `dec0dec0ffee` as the headers) of some of the ciphertexts we have
 
-#### Cracking the keys
+#### Meet me in the middle
 
 Since we are cracking two keys, to save time, we can perform what is called a ["Meet in the Middle"](https://en.wikipedia.org/wiki/Meet-in-the-middle_attack) attack
 

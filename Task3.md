@@ -23,7 +23,7 @@ Finally, we got to the good part, reverse engineering
 
 We are given a memory dump, so some digital forensics is required before we can get there though. 
 
-#### The Digital Forensics Part
+#### Volatility Reveals All
 
 Volatility will of course be our go to tool for this. We need a symbol table though so that we can get actual useful data from the memory dump. We can do this with the tool, [drarf2json](https://github.com/volatilityfoundation/dwarf2json)
 
@@ -113,7 +113,7 @@ Usage: ./some_file <encoded file>
 
 This is even more telling that we have something. It's Ghidra time!
 
-#### The Reverse Engineering Part
+#### Go Go Ghidra
 
 Remember, from the `file` command output, the binary is stripped. However, we can pretty easily find the `main` function by trying to find `libc_start_main`
 

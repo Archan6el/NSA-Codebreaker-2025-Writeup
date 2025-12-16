@@ -15,13 +15,13 @@
 
 This one was probably my favorite task. 
 
-If you read my other write ups, you know that I usually use a combination of Ghidra and Binja. For this task, Binja ended up being more useful at first (or at least, sort of easier to read the dissassembly compared to what Ghidra was giving me), and then I ended off the task with Ghidra. 
+If you read my other write ups, you know that I usually use a combination of Ghidra and Binja. For this task, Binja ended up being more useful at first (or at least, sort of easier to read the disassembly compared to what Ghidra was giving me), and then I ended off the task with Ghidra. 
 
 First, we can load the binary, `suspicious`, into Binja and start looking at what we're working with
 
 I do just want to preface that I did this entire task statically. It is possible to do it dynamically, or a little bit of both, but the binary has multiple debugger checks, and to just avoid dealing with any of that, I went with a purely static approach. Also, I figured it'd be safer considering the fact that the binary is very likely malware
 
-> Note that the below dissassembly snippets already show renamed function names as a result of my analysis
+> Note that the below disassembly snippets already show renamed function names as a result of my analysis
 
 Beginning with main, immediately we see some really weird stuff going on
 
@@ -946,7 +946,7 @@ if __name__ == "__main__":
 
 To preface, I had dumped the output of the brainrot string into a file called `out.bin` and the content of the obfuscated data into a file called `"init_constructors_global.bin"`. I am also using "mimic" as my prefix since we are attempting to mimic the malware
 
-Additionally, from my comments, you can see that I tried to copy the Ghidra dissassembly version of the same deobfuscation function that we already made. I was having issues when emulating Binja's version. 
+Additionally, from my comments, you can see that I tried to copy the Ghidra disassembly version of the same deobfuscation function that we already made. I was having issues when emulating Binja's version. 
 
 The above script also attempts to decompress multiple times / ways just to make sure we're not off offset wise or whatnot. 
 

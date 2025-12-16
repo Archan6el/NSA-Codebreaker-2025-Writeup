@@ -482,7 +482,7 @@ This is pretty obviously a malware, with the base64 encoded file very likely con
 
 The prompt asks us to "Submit a complete list of affected IPs and FQDNs, one per line", so we have to mimic this base64 decoding and decryption logic and use it on a file that was inputted to this malicious binary. 
 
-The question is, where do we find that said file? Well remember in the Ghidra dissassembly, it writes the inputted file to memory. So the file's contents are very likely in our memory dump, specifically in one of the virtual memory sections we had already dumped for the `1552` process. 
+The question is, where do we find that said file? Well remember in the Ghidra disassembly, it writes the inputted file to memory. So the file's contents are very likely in our memory dump, specifically in one of the virtual memory sections we had already dumped for the `1552` process. 
 
 With the below `grep` command, we can search for any Base64 content
 

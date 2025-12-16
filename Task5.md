@@ -54,7 +54,7 @@ undefined8 Comms::full_handshake(void)
 }
 ```
 
-As we can see, it first recieves an RSA public key, which we see in the Wireshark transmissions. 
+As we can see, it first receives an RSA public key, which we see in the Wireshark transmissions. 
 
 It then sends AES keys to encrypt future transmissions, which it encrypts using the received RSA public key so that we can't see what the keys are
 

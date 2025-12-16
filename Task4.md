@@ -1511,9 +1511,9 @@ UTF-8: execute_module
 hex: 657865637574655f6d6f64756c65
 ```
 
-Looks like the IP was `203.0.113.42`, the request it sent was `GET /module HTTP/1.1`, the function it executes is `execute_module`, and most importantly for us, the file path it writes a file to appears to be `/tmp/./dbBY1cfp0bCosNlL`
+Looks like the IP was `203.0.113.42`, the request it sent was `GET /module HTTP/1.1`, the function it executes is `execute_module`, and most importantly for us, the file path it writes a file to appears to be `/tmp/.dbBY1cfp0bCosNlL`
 
-Sure enough, submitting `/tmp/./dbBY1cfp0bCosNlL` solves this task!
+Sure enough, submitting `/tmp/.dbBY1cfp0bCosNlL` solves this task!
 
 This was a really fun challenge, and was definitely my favorite of the 7
 

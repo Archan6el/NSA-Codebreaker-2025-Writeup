@@ -512,7 +512,7 @@ Well would you look at that, we were right! The majority of the key is indeed ze
 
 It appears that only the first 4 bytes of the keys actually contain data, while the remaining bytes are all zeroes. This is huge, this means that brute forcing these keys is actually feasible. 
 
-Ok, so we know what we have to do. We have to brute force the correct keys since they are mathematically feasible to crack due to the much smaller key space (since only the first 4 bytes for each key matters), and we can check if we are correct since we already know some of the plaintext (`REQCONN` and `REQCONN_OK`, with `dec0dec0ffee` as the headers)
+Ok, so we know what we have to do. We have to brute force the correct keys since they are mathematically feasible to crack due to the much smaller key space (since only the first 4 bytes for each key matters), and we can check if we are correct since we already know the plaintext (`REQCONN` and `REQCONN_OK`, with `dec0dec0ffee` as the headers) of some of the ciphertexts we have
 
 #### Cracking the keys
 

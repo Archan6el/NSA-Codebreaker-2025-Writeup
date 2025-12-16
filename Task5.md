@@ -21,7 +21,7 @@ We teased the interesting transmission in task 2, but it appears that the goal o
 
 We actually know where these encrypted messages came from (specifically the messages in red)
 
-In the binary from task 4, there is a class named `Comms`
+Going back to Ghidra our beloved, in the binary from task 4, there is a class named `Comms`
 
 > Again, note that I have already renamed functions based on my analysis of what they do
 
@@ -298,24 +298,7 @@ void __thiscall Comms::Comms(Comms *this)
 }
 ```
 
-From my function naming, we can see that it generates two keys using a `gen_key` function. It then uses these keys to initialize two different AES ECB contexts
-
-```c
-void aes_init_enc(uchar *param_1,EVP_CIPHER_CTX *param_2)
-
-{
-  int iVar1;
-  EVP_CIPHER *cipher;
-  
-  cipher = EVP_aes_128_ecb();
-  iVar1 = EVP_EncryptInit_ex(param_2,cipher,(ENGINE *)0x0,param_1,(uchar *)0x0);
-  if (iVar1 != 0) {
-    return;
-  }
-  puts("error creating enc");
-  return;
-}
-```
+From my function naming, we can see that it generates two keys using a `gen_key` function. It then uses these keys to initialize two different AES ECB contexts, both consisting of the corresponding encrypt and decrypt contexts
 
 Why does it generate two keys and initialize two different AES ECB contexts?
 

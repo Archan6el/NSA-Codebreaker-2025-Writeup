@@ -13,7 +13,7 @@
 
 ### Solve:
 
-Unironically the longest part of this task was getting everything setup. 
+Unironically the longest part of this task was getting everything setup when I first went through it. 
 
 #### Setup
 

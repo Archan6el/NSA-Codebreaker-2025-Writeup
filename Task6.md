@@ -786,11 +786,11 @@ Reached target in channel: channel33768
 
 Well, time to see if this works
 
-Starting with the first command
+Starting with the first command, running it in `Public`
 
 ![image5](./images/task6img5.png)
 
-So far so good. Ignore the first error message, it did indeed add us to this channel
+So far so good. Ignore the first error message, it did indeed add us to this channel. Also ignore the "Created channel..." message, it didn't actually create a new channel, it added us to the already existing `channel52696`. That's just the default message it provides, but nontheless shows us that the command succeeded. 
 
 Now from within `channel52696`, we run the second command
 

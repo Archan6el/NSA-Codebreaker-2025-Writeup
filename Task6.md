@@ -80,7 +80,7 @@ Now we can run the bot
 
 ![image3](./images/task6img3.png)
 
-Looking at the code of the bot, which is all in Python, it appears that some commands can only be ran if your username begins with `mod_` or `admin_`
+Looking at the code of the bot, which is all in Python, it appears that some commands can only be ran if your username begins with `mod_` or `admin_`, with the below example being just a little snippet of the commands you can run in a file named `plugin_admin.py`
 
 ```python
 from mmpy_bot import Plugin
@@ -122,7 +122,7 @@ Now, I can successfully run these commands
 
 It doesn't really look like this is going to get us anywhere though
 
-After some more digging in the bot's code, we find a very interesting file
+After some more digging in the bot's code, we find a very interesting file named `plugin_sales.py`
 
 ```python
 from mmpy_bot_monkeypatch import *  # Ensure monkeypatch is applied before anything else
@@ -339,7 +339,7 @@ class SalesPlugin(Plugin):
         logger.info(f"Sale recorded for offering ID {offering_id}")
 ```
 
-Specifically, the `!nego` command
+Specifically, the `!nego` command is what's really interesting
 
 ```python
 @listen_to('^!nego (.*)$', no_direct=True,human_description="!nego channel seller moderator1 moderator2\n\tCreate a negotiation channel to close a deal!")
@@ -434,7 +434,7 @@ Specifically, the `!nego` command
         logger.info(f"Created channel '{display_name}' and added users: {user1}, {user2}, {user3}")
 ```
 
-This creates a channel, consisting of you, a seller user (non-mod), another user (non-mod), with the last user required to be a mod. 
+This creates a channel, consisting of you, a seller user, another user, with the last user required to be a mod. 
 
 ```python
 user1 = message.sender_name
@@ -465,9 +465,9 @@ except Exception as e:
         print(f"[DEBUG] channel_id: {channel_id}")
 ```
 
-This appears to be a pretty big flaw. That means that we can add users to any channel, not just non-existent or archived channels. 
+This appears to be a pretty big flaw. That means that we can add users and ourselves to any channel, not just non-existent or archived channels. 
 
-The only requirement to do so is that the 3 users you try to run the `!nego` command with (the 2 non-mods and the mod) cannot be in the channel you are trying to unarchive / add everyone to. 
+The only requirement to do so is that the 3 users you try to run the `!nego` command with (the 2 users and the mod) cannot be in the channel you are trying to unarchive / add everyone to. 
 
 ```python
 existing_members = self.driver.channels.get_channel_members(channel_id)
@@ -479,7 +479,7 @@ if existing_user_ids:
     return
 ```
 
-This appears to be another flaw! It seems that the intent was that if a channel isn't empty it shouldn't add any users at all, but it appears that just as long as all users aren't in the target channel, it'll work and add everyone to it. 
+This appears to be another flaw! It seems that the intent was that if a channel isn't empty it shouldn't add any users at all, but it appears that just as long as all users you want to add aren't in the target channel, it'll work and add everyone to it. 
 
 This `!nego` command seems to be our method of traversing channels. Beginning from the `Public` channel, we have to find 3 users in the current channel (with 1 of them being a mod) who are not in the target channel we want to get to, run the `!nego` command to gain access to that channel, and then continuously do this until we reach a channel that has `admin_insecureapricots73` in it. 
 
@@ -487,7 +487,7 @@ We can write a Python script that can automate doing this. Firstly though, we ne
 
 We can do this through some SQL commands:
 
-Firstly, we can get the user IDs of all users in each channel by running this query on every channel
+We can get the user IDs of all users in each channel by running this query on every channel
 
 ```sql
 mattermost=# SELECT u.username, u.id AS user_id

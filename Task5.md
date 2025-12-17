@@ -1024,7 +1024,7 @@ FOUND keys: k1=0x0309d694 k2=0x00617d73
 Done in 24.182218213s
 ```
 
-Well, we can now make a Python script to test if these keys are correct. We compile all of the encrypted messages from the Wireshark transmission, and try to decrypt them using our found keys
+Well, we can now make a Python script to test if these keys are correct. We compile all of the encrypted messages from the Wireshark transmissions, and try to decrypt them using our found keys
 
 
 ```python

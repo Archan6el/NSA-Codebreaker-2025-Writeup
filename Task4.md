@@ -1302,7 +1302,7 @@ assemble_path_helper(local_6f8,&DAT_0010d650,0x10,param_1);
 It then dynamically loads the file (which means it is expecting to download a shared library) with `dlopen` and executes a function with `dlsym`, similar to what we've seen before
 
 ```c
- else {
+          else {
             std::basic_ofstream<>::close();
             close(__fd);
             uVar5 = std::__cxx11::basic_string<>::c_str();

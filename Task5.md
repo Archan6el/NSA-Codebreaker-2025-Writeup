@@ -1028,7 +1028,6 @@ Well, we can now make a Python script to test if these keys are correct. We comp
 
 
 ```python
-# verify_candidates_multi.py
 from Crypto.Cipher import AES
 from binascii import unhexlify
 import sys

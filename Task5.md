@@ -1048,7 +1048,7 @@ def key_from_v(v):
     # v: integer, produce 16-byte AES-128 key: little-endian 4 bytes then 12 zeros
     return v.to_bytes(4, "little") + b"\x00"*12
 
-# your candidate values (integers)
+# candidate values (integers)
 k1_v = 0x0309d694
 k2_v = 0x00617d73
 

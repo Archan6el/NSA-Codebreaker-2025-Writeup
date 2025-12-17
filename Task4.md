@@ -124,7 +124,7 @@ These can actually be seen at the beginning of `main` that I showed earlier
 
 Basically, there are variables containing brainrot strings, and variables containing what appear to be obfuscated blobs
 
-Whatever function is being called, my assumption was that it is somehow using the brainrot strings to deobfuscate the obfuscated blobs. 
+Whatever function is being called, my assumption was that it is somehow using the brainrot strings to deobfuscate the obfuscated blobs, or vice versa, with the obfuscated blobs deobfuscating the brainrot strings. 
 
 Going through the functions in Binja, we are able to find a likely culprit
 

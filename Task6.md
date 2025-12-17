@@ -45,11 +45,11 @@ decimalpiglet81:yvMhOrAZSTgtqnAx
 
 Username `decimalpiglet81` and password `yvMhOrAZSTgtqnAx`
 
-Navigating to the team `MalwareCentral`, as the challenge mentions, we can see that we only have access to one channel, which is `Public`
+Navigating to the team `MalwareCentral`, as the task prompt mentions, we can see that we only have access to one channel, which is `Public`
 
 ![image2](./images/task6img2.png)
 
-It appears that this is some sort of public channel with some other bad actors in it, but again as the challenge mentions, the "advesary", whoever they are, is not in this channel
+It appears that this is some sort of public channel with some other bad actors in it, but again as the prompt mentions, the "adversary", whoever they are, is not in this channel
 
 We can actually try to see who our target is by going into the PostgreSQL database and looking at the `users` table. 
 

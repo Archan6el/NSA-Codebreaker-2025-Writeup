@@ -81,7 +81,7 @@ Firstly, in the `main` function, there's some weird sections like below
 00003161              goto cooked
 ```
 
-Firstly, since you'll see it a lot later on, `cooked` is a label that essentially just contains some code that ends / exists the program. Whenever the binary reaches some sort of fail state, or you fail a debugger check, it jumps to this label.
+Firstly, since you'll see it a lot later on, `cooked` is a label that essentially just contains some code that ends / exits the program. Whenever the binary reaches some sort of fail state, or you fail a debugger check, it jumps to this label.
 
 Ignoring my renaming of some labels, variables, and functions, the interesting thing is `r14_1` being assigned a value extracted from the memory of a brainrot string literal.
 

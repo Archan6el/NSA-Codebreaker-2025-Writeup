@@ -21,7 +21,7 @@ First, we can load the binary, `suspicious`, into Binja and start looking at wha
 
 I do just want to preface that I did this entire task statically. It is possible to do it dynamically, or a little bit of both, but the binary has multiple debugger checks, and to just avoid dealing with any of that, I went with a purely static approach. Also, I figured it'd be safer considering the fact that the binary is very likely malware
 
-> Note that the below disassembly snippets already show renamed function names as a result of my analysis
+> Note that the below disassembly snippets already show renamed function, variable, and label names as a result of my analysis
 
 Beginning with main, immediately we see some really weird stuff going on
 

@@ -14,7 +14,7 @@ Immediately, we can see that this task is pretty weird. It doesn't give us any n
 
 To save the suspense, everything needed to solve this task comes from the pcap from task 2, and the last binary we found from task 4 (the binary that was inside the given binary)
 
-We teased the interesting transmission in task 2, but it appears that the goal of this task is to decrypt these transmissions:
+We teased the interesting transmissions in task 2, but it appears that the goal of this task is to decrypt said transmissions:
 
 ![image1](./images/task5img1.png)
 ![image2](./images/task5img2.png)

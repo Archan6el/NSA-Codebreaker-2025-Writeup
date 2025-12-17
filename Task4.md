@@ -1299,9 +1299,60 @@ assemble_path_helper(local_718,&DAT_0010d649,1,param_1);
 assemble_path_helper(local_6f8,&DAT_0010d650,0x10,param_1);
 ```
 
-It then dynamically loads the file (which means it is expecting to download a shared library) and executes a function
+It then dynamically loads the file (which means it is expecting to download a shared library) with `dlopen` and executes a function with `dlsym`, similar to what we've seen before
 
-Again, a lot of the important details (like what the IP is, what request was sent, the file path, what function was executed, etc) are encrypted in the `DATS`. 
+```c
+ else {
+            std::basic_ofstream<>::close();
+            close(__fd);
+            uVar5 = std::__cxx11::basic_string<>::c_str();
+            lVar6 = dlopen(uVar5,0x102);
+            if (lVar6 == 0) {
+              bVar8 = false;
+            }
+            else {
+              assemble_path_helper(local_6b8,&DAT_0010d660,0xe,param_1);
+              uVar5 = std::__cxx11::basic_string<>::c_str();
+              pcVar7 = (code *)dlsym(lVar6,uVar5);
+              bVar8 = pcVar7 != (code *)0x0;
+              if (bVar8) {
+                    /* try { // try from 0010838f to 00108393 has its CatchHandler @ 0010848c */
+                Comms::Comms(local_698);
+                    /* try { // try from 001083a5 to 001083a6 has its CatchHandler @ 00108474 */
+                (*pcVar7)(local_698);
+                dlclose(lVar6);
+                Comms::~Comms(local_698);
+              }
+              else {
+                dlclose(lVar6);
+              }
+              std::__cxx11::basic_string<>::~basic_string(local_6b8);
+            }
+          }
+        }
+        else {
+          close(__fd);
+          bVar8 = false;
+        }
+        std::basic_ofstream<>::~basic_ofstream((basic_ofstream<> *)local_628);
+        std::__cxx11::basic_string<>::~basic_string((basic_string<> *)local_6d8);
+        std::__cxx11::basic_string<>::~basic_string(local_6f8);
+        std::__cxx11::basic_string<>::~basic_string(local_718);
+        std::__cxx11::basic_string<>::~basic_string((basic_string<> *)local_738);
+        std::__cxx11::basic_string<>::~basic_string(local_758);
+      }
+    }
+    std::__cxx11::basic_string<>::~basic_string(local_778);
+  }
+  if (local_20 != *(long *)(in_FS_OFFSET + 0x28)) {
+                    /* WARNING: Subroutine does not return */
+    __stack_chk_fail();
+  }
+  return bVar8;
+}
+```
+
+Again, a lot of the important details (like what the IP is, what request was sent, the file path, what function was executed, etc.) are encrypted in the `DATS`. 
 
 What we really want is that file name, since the goal of this task is to find the "file path the malware uses to write a file"
 

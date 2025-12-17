@@ -894,6 +894,7 @@ func mergeTwoFilesAndVerify(k1path, k2path string, ct []byte, verifyPrefix []byt
 				}
 				if len(pt) >= len(verifyPrefix) && string(pt[:len(verifyPrefix)]) == string(verifyPrefix) {
 					fmt.Printf("FOUND keys: k1=0x%08x k2=0x%08x\n", k1v, k2v)
+					return nil 
 				}
 			}
 		}
@@ -1007,21 +1008,20 @@ I run our Go program with
 
 and hope for the best
 
-The program first generates all possible variations for both keys, which takes a while. It then performs the Meet in the Middle attack, which it actually did pretty fast. It spams me telling me it found the keys, it appears I forgot to code in a `break` if it found a match
+The program first generates all the intermediate encryption and decryption results, which takes a while. It then goes through all of them to find matches, which was actually pretty fast. It then tells us that it was able to find two keys that worked!
 
 ```
+Generating k1 chunks...
+k1 chunks: 64
+Merging k1 chunks into k1_all.dat ...
+k1 merged at /tmp/mitmtmp/k1_all.dat
+Generating k2 chunks...
+k2 chunks: 64
+Merging k2 chunks into k2_all.dat ...
+k2 merged at /tmp/mitmtmp/k2_all.dat
+Streaming merge and verify...
 FOUND keys: k1=0x0309d694 k2=0x00617d73
-FOUND keys: k1=0x0309d694 k2=0x00617d73
-FOUND keys: k1=0x0309d694 k2=0x00617d73
-FOUND keys: k1=0x0309d694 k2=0x00617d73
-FOUND keys: k1=0x0309d694 k2=0x00617d73
-FOUND keys: k1=0x0309d694 k2=0x00617d73
-FOUND keys: k1=0x0309d694 k2=0x00617d73
-FOUND keys: k1=0x0309d694 k2=0x00617d73
-FOUND keys: k1=0x0309d694 k2=0x00617d73
-FOUND keys: k1=0x0309d694 k2=0x00617d73
-FOUND keys: k1=0x0309d694 k2=0x00617d73
-FOUND keys: k1=0x0309d694 k2=0x00617d73
+Done in 24.182218213s
 ```
 
 Well, we can now make a Python script to test if these keys are correct. We compile all of the encrypted messages from the Wireshark transmission, and try to decrypt them using our found keys

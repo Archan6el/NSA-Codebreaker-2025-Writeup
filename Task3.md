@@ -253,7 +253,7 @@ void * read_file_into_memory(char *param_1,size_t *param_2)
 }
 ```
 
-And also a file that performs some kind of base64 decoding
+And also a function that performs some kind of base64 decoding
 
 ```c
 void * base64_decode(long param_1,size_t param_2,long *param_3)

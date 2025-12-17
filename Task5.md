@@ -526,7 +526,7 @@ We then look for a match in the middle. If we get one, we have found our two key
 
 I end up creating a program that can do this for us in Go. I will warn the program is pretty long (I sorta just had AI cook something up). There's probably a better, more efficient way to do this. 
 
-Regardless, what the program does is generate all possible variations of the first key and the second key, storing these locally on your system somewhere (like in `/tmp`). It then performs the Meet in the Middle attack using these keys
+Regardless, what the program does is it tries every possible value for each key, computes the intermediate encryption and decryption results, and saves those to disk in sorted chunks so it doesn’t need to keep everything in memory. It then streams through both result sets to find matches and verifies any candidate key pairs by decrypting the full ciphertext and checking for our known plaintext, that being `0xDE, 0xC0, 0xDE, 0xC0, 0xFF, 0xEE, 'R', 'E', 'Q', 'C', 'O', 'N', 'N'` since that will be the message I'll be trying to crack
 
 ```go
 // mitm-runner.go
@@ -924,7 +924,7 @@ func main() {
 	if len(ct)%16 != 0 {
 		panic("cipher length must be multiple of 16")
 	}
-	verifyPrefix := []byte{0xDE, 0xC0, 0xDE, 0xC0, 0xFF, 0xEE, 'R', 'E', 'Q', 'C', 'O', 'N', 'N'} // user-provided
+	verifyPrefix := []byte{0xDE, 0xC0, 0xDE, 0xC0, 0xFF, 0xEE, 'R', 'E', 'Q', 'C', 'O', 'N', 'N'}
 
 	if err := os.MkdirAll(tmpdir, 0755); err != nil {
 		panic(err)
@@ -986,7 +986,7 @@ We can run this like so after compiling it as `mitm-runner`
 ./mitm-runner -cipher <CIPHER> -tmp /tmp/mitmtmp -chunk 1048576 -workers 8
 ```
 
-For the cipher, I will use the relatively short message that is sent right after the `KEY_RECIEVED` message. This is the message that we believe decrypts to the `dec0dec0ffee` header and `REQCONN`
+For the cipher, as I mentioned before, I will use the relatively short message that is sent right after the `KEY_RECIEVED` message. This is the message that we believe decrypts to the `dec0dec0ffee` header and `REQCONN`
 
 ```
 00000106  f4 dd 46 f9 82 34 1b 5d  da c9 0f f0 fd 70 c3 67   ..F..4.] .....p.g

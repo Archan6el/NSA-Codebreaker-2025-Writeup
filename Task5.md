@@ -526,6 +526,8 @@ We then look for a match in the middle. If we get one, we have found our two key
 
 I end up creating a program that can do this for us in Go. I will warn the program is pretty long (I sorta just had AI cook something up). There's probably a better, more efficient way to do this. 
 
+Regardless, what the program does is generate all possible variations of the first key and the second key, storing these locally on your system somewhere (like in `/tmp`). It then performs the Meet in the Middle attack using these keys
+
 ```go
 // mitm-runner.go
 // Build: go build -o mitm-runner mitm-runner.go

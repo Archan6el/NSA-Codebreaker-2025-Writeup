@@ -158,7 +158,7 @@ Ok, well, how can we exploit this?
 
 Well, since it does process zip files inside of zip files, the first thing that comes to mind is a **ZipSlip** vunerability, which Android themselves even warns of [here](https://developer.android.com/privacy-and-security/risks/zip-path-traversal)
 
-For our above example, essentially, it's done by having the inner zip be named something like `../exploited` instead of `inside`. So instead of `inside.txt` being written to 
+For our above example, essentially, it's done by having the inner zip be named something like `../exploited` instead of `inside.zip`. So instead of `inside.txt` being written to 
 
 ```
 /data/user/0/com.badguy.mmarchiver/cache/zippier/extract/inside/inside.txt

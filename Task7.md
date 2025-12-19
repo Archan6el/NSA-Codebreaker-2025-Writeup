@@ -32,7 +32,7 @@ Now we can really start
 ```
 netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=8065 connectaddress=172.30.48.197 connectport=8065
 ```
-> and then connect using the IP `10.0.2.2` on port `8065`, since `10.0.2.2` is Anndroid Studio's loopback address basically
+> and then connect using the IP `10.0.2.2` on port `8065`, since `10.0.2.2` is Android Studio's loopback address basically
 
 #### Understanding the App
 
@@ -64,205 +64,38 @@ public FileDownloadWorker(Context ctx, WorkerParameters params, PreferencesRepos
 
 More on the `zipArchiver` later
 
-If we look deeper and look at the file `D3/j` (a lot of the function and class names that jadx-gui shows us are abstracted), we find what appears to be the underlying code that downloads files
+If we scroll down a bit, we find the underlying code that writes the downloaded files to disk
 
 ```java
-package D3;
-
-import A.AbstractC0003b0;
-import G3.B;
-import T3.G;
-import androidx.room.C;
-import androidx.room.C0415b;
-import androidx.room.L;
-import com.badguy.mmarchiver.ui.screen.MainScreenKt;
-import com.badguy.mmarchiver.ui.screen.MainScreenViewModel;
-import com.badguy.mmarchiver.worker.ZipArchiver;
-import g3.C0624F;
-import h3.AbstractC0658a;
-import h3.AbstractC0662e;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.concurrent.Callable;
-import k3.C0751i;
-import kotlin.jvm.internal.E;
-import kotlinx.serialization.KSerializer;
-import kotlinx.serialization.descriptors.ClassSerialDescriptorBuilder;
-import kotlinx.serialization.descriptors.SerialDescriptor;
-import kotlinx.serialization.internal.ObjectSerializer;
-import kotlinx.serialization.internal.PluginGeneratedSerialDescriptorKt;
-import kotlinx.serialization.internal.TripleSerializer;
-import kotlinx.serialization.modules.SerializersModuleCollector;
-import net.axolotl.zippier.ZipFormat;
-import okhttp3.ResponseBody;
-import okhttp3.internal.cache.DiskLruCache;
-import org.slf4j.Logger;
-import retrofit2.Response;
-import u3.InterfaceC1174c;
-
-/* loaded from: classes.dex */
-public final /* synthetic */ class j implements InterfaceC1174c {
-
-    /* renamed from: d, reason: collision with root package name */
-    public final /* synthetic */ int f1104d;
-
-    /* renamed from: e, reason: collision with root package name */
-    public final /* synthetic */ Object f1105e;
-
-    public /* synthetic */ j(int i, Object obj) {
-        this.f1104d = i;
-        this.f1105e = obj;
-    }
-
-    @Override // u3.InterfaceC1174c
-    public final Object invoke(Object obj) {
-        Response response;
-        String valueOf;
-        switch (this.f1104d) {
-            case 0:
-                return ((k) this.f1105e).c(((Integer) obj).intValue());
-            case 1:
-                String str = (String) this.f1105e;
-                String it = (String) obj;
-                kotlin.jvm.internal.r.e(it, "it");
-                if (m.q0(it)) {
-                    if (it.length() >= str.length()) {
-                        return it;
-                    }
-                    return str;
-                }
-                return AbstractC0003b0.f(str, it);
-            case 2:
-                Q3.d dVar = (Q3.d) this.f1105e;
-                String it2 = (String) obj;
-                kotlin.jvm.internal.r.e(it2, "it");
-                dVar.getClass();
-                Locale locale = Locale.ROOT;
-                String lowerCase = it2.toLowerCase(locale);
-                kotlin.jvm.internal.r.d(lowerCase, "toLowerCase(...)");
-                Logger logger = dVar.f4238b;
-                logger.debug("getting format for ".concat(lowerCase));
-                LinkedHashMap linkedHashMap = dVar.f4241e;
-                if (linkedHashMap.containsKey(lowerCase)) {
-                    return (ZipFormat) linkedHashMap.get(lowerCase);
-                }
-                ArrayList arrayList = dVar.f4242f;
-                String lowerCase2 = lowerCase.toLowerCase(locale);
-                kotlin.jvm.internal.r.d(lowerCase2, "toLowerCase(...)");
-                InputStream inputStream = null;
-                if (!arrayList.contains(lowerCase2)) {
-                    return null;
-                }
-                File file = new File(dVar.f4240d, dVar.f4243g + "." + E.a(ZipFormat.class).d() + "_" + lowerCase + ".jar");
-                if (file.exists()) {
-                    Q3.d.a(dVar, file);
-                } else {
-                    try {
-                        Q3.e eVar = dVar.f4244h;
-                        if (eVar != null) {
-                            logger.debug("attempting download for format ".concat(lowerCase));
-                            response = (Response) B.w(C0751i.f8740d, new Q3.c(eVar, lowerCase, null));
-                        } else {
-                            response = null;
-                        }
-                        if (response != null && response.isSuccessful()) {
-                            ResponseBody responseBody = (ResponseBody) response.body();
-                            if (responseBody != null) {
-                                inputStream = responseBody.byteStream();
-                            }
-                            if (inputStream != null) {
-                                try {
-                                    FileOutputStream fileOutputStream = new FileOutputStream(file);
-                                    try {
-                                        m0.c.v(inputStream, fileOutputStream);
-                                        fileOutputStream.close();
-                                        logger.info("format written to " + file);
-                                        inputStream.close();
-                                    } finally {
-                                    }
-                                } catch (Throwable th) {
-                                    try {
-                                        throw th;
-                                    } catch (Throwable th2) {
-                                        n2.f.l(inputStream, th);
-                                        throw th2;
-                                    }
-                                }
-                            }
-                            Q3.d.a(dVar, file);
-                        }
-                    } catch (Throwable th3) {
-                        logger.error("exception during format download: " + th3);
-                    }
-                }
-                return (ZipFormat) linkedHashMap.get(lowerCase);
-            case 3:
-                T3.u uVar = (T3.u) this.f1105e;
-                G it3 = (G) obj;
-                kotlin.jvm.internal.r.e(it3, "it");
-                return uVar.onPathResult(it3, "listRecursively");
-            case 4:
-                Callable callable = (Callable) this.f1105e;
-                kotlin.jvm.internal.r.e((V1.a) obj, "it");
-                return callable.call();
-            case 5:
-                C c5 = (C) this.f1105e;
-                W1.a db = (W1.a) obj;
-                kotlin.jvm.internal.r.e(db, "db");
-                c5.f6490g = db;
-                return C0624F.f8096a;
-            case 6:
-                L l4 = (L) this.f1105e;
-                C0415b config = (C0415b) obj;
-                kotlin.jvm.internal.r.e(config, "config");
-                return l4.createOpenHelper(config);
-            case 7:
-                return MainScreenKt.n((MainScreenViewModel) this.f1105e, ((Boolean) obj).booleanValue());
-            case 8:
-                return ZipArchiver.a((ZipArchiver) this.f1105e, (String) obj);
-            case 9:
-                if (obj == ((AbstractC0658a) this.f1105e)) {
-                    return "(this Collection)";
-                }
-                return String.valueOf(obj);
-            case 10:
-                AbstractC0662e abstractC0662e = (AbstractC0662e) this.f1105e;
-                Map.Entry it4 = (Map.Entry) obj;
-                kotlin.jvm.internal.r.e(it4, "it");
-                StringBuilder sb = new StringBuilder();
-                Object key = it4.getKey();
-                String str2 = "(this Map)";
-                if (key == abstractC0662e) {
-                    valueOf = "(this Map)";
-                } else {
-                    valueOf = String.valueOf(key);
-                }
-                sb.append(valueOf);
-                sb.append('=');
-                Object value = it4.getValue();
-                if (value != abstractC0662e) {
-                    str2 = String.valueOf(value);
-                }
-                sb.append(str2);
-                return sb.toString();
-            case 11:
-                return ObjectSerializer.a((ObjectSerializer) this.f1105e, (ClassSerialDescriptorBuilder) obj);
-            case 12:
-                return PluginGeneratedSerialDescriptorKt.a((SerialDescriptor) this.f1105e, ((Integer) obj).intValue());
-            case 13:
-                return TripleSerializer.a((TripleSerializer) this.f1105e, (ClassSerialDescriptorBuilder) obj);
-            case 14:
-                return SerializersModuleCollector.a((KSerializer) this.f1105e, (List) obj);
-            default:
-                return DiskLruCache.b((DiskLruCache) this.f1105e, (IOException) obj);
+private final File writeFileToDisk(ArchiveFile archiveFile, InputStream inputStream) {
+    try {
+        File file = new File(getApplicationContext().getCacheDir(), FileDownloadWorkerKt.DOWNLOAD_PATH);
+        if (!file.exists()) {
+            file.mkdirs();
         }
+        File file2 = new File(file, archiveFile.getName());
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(file2);
+            try {
+                c.v(inputStream, fileOutputStream);
+                fileOutputStream.close();
+                inputStream.close();
+                Log.d(this.TAG, "file written to " + file2.getPath());
+                return file2;
+            } finally {
+            }
+        } catch (Throwable th) {
+            try {
+                throw th;
+            } catch (Throwable th2) {
+                f.l(inputStream, th);
+                throw th2;
+            }
+        }
+    } catch (IOException e5) {
+        Log.e(this.TAG, "exception during file download: " + e5);
+        this.error = ArchiverError.FILE_DOWNLOAD_FAILED;
+        return null;
     }
 }
 ```

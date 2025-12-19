@@ -120,7 +120,7 @@ We can see the path it saves the zip to, which is at `/data/user/0/com.badguy.mm
 
 From this, we can assume that `hi.txt` is at `/data/user/0/com.badguy.mmarchiver/cache/zippier/extract/test/hi.txt` before it gets archived
 
-Speaking of the archiving part, you can it. That's basically the app living up to its name and archiving the downloaded file, but for the purposes of the vulnerability research, that avenue doesn't lead anywhere
+Speaking of the archiving part, you can ignore it. That's basically the app living up to its name and archiving the downloaded file, but for the purposes of the vulnerability research, that avenue doesn't lead anywhere
 
 From this, I immediately wanted to see what would happen if you had a zip within a zip. We can make a pretty simple Python program to create a zip within a zip. The outer zip will be called `outside.zip` and the inner zip will be called `inside.zip`. In the inner zip we will have a text file called `inside.txt`
 

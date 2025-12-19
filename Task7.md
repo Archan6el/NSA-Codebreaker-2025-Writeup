@@ -201,7 +201,7 @@ with zipfile.ZipFile('outside.zip', 'w', zipfile.ZIP_DEFLATED) as outer_zip:
 
 Ok, good work by the developers, it appears that ZipSlip, or at least the most common type, is blocked. Going back to jadx-gui, let's try to find where the logic is that checks this
 
-At `Q3/a`, we can find the ZipSlip check
+In `Q3/a` (a lot of the class and function names are abstracted), we can find the ZipSlip check
 
 ```java
 for (ZipEntry nextEntry = zipInputStream.getNextEntry(); nextEntry != null; nextEntry = zipInputStream.getNextEntry()) {

@@ -106,7 +106,7 @@ Well, let's test this theory. Since in the constructor for `FileDownloadWorker` 
 
 I create a file called `test.zip` which just contains a text file, named `hi.txt`, whose contents is literally just the word `hi`
 
-Uploading it to the `Public` channel and then running the app (it prompts you to log in as a certain user when you do it the first time. I just used the credentials for `decimalpiglet81`)
+Uploading it to the `Public` channel and then running the app (it prompts you to log in as a certain user when you do it the first time. I just used the credentials for `decimalpiglet81`), let's take a look at Logcat
 
 Looking at the app logs, filtering by the word "format", we can see that it detected our zip file, and interestingly, appears to unzip it since it seems to detect the txt file within it
 

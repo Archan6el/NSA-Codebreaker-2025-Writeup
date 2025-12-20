@@ -28,11 +28,11 @@ The prompt mentions that the most recent version of Android was being used, so I
 
 Now we can really start
 
-> I will note though that if you are using WSL like I am, I was running the Mattermost instance from WSL but running Android Studio from Windows. In order to have the app running on Windows connect to the Mattermost instance in WSL, use the below command to basically forward the port on WSL to your Windows machine
+> I will note though that if you are using WSL like I am there's something a little extra you have to do. I was running the Mattermost instance from WSL but running Android Studio from Windows. In order to have the app running on Windows connect to the Mattermost instance in WSL, use the below command to basically forward the port on WSL to your Windows machine
 ```
 netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=8065 connectaddress=172.30.48.197 connectport=8065
 ```
-> and then connect using the IP `10.0.2.2` on port `8065`, since `10.0.2.2` is Android Studio's loopback address basically
+> and then connect in the app using the IP `10.0.2.2` on port `8065`, since `10.0.2.2` is Android Studio's loopback address basically
 
 #### Understanding the App
 

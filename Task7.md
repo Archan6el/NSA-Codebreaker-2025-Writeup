@@ -991,7 +991,7 @@ We have a static block,
 
 which calls some functions, `deleteArchives()` and `deleteApp()`. Since this is a static block, it'll run upon class initialization
 
-Based on the names of the functions, it just tries to delete a bunch of things to interfere with the bad actors' archives. However, you can have your `ZipFormat_7z.java` do whatever you want it to do. For example, more useful functionality would be establishing a reverse shell, or downloading the archived files instead of deleting them
+It's pretty obvious based on the names of the functions that they just try to delete a bunch of things to interfere with the bad actors' archives. However, you can have your `ZipFormat_7z.java` do whatever you want it to do. For example, more useful functionality would be establishing a reverse shell, or downloading the archived files instead of deleting them
 
 Recall that `ZipFormat.java` is required and `ZipFormat_7z.java` must implement it because of this code we saw earlier in the class loader logic that enforces the type
 

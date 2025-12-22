@@ -663,8 +663,15 @@ with zipfile.ZipFile('outside.zip', 'w', zipfile.ZIP_DEFLATED) as outer_zip:
 Uploading this and filtering the logs by the word "format", we see the below
 
 ![image6](./images/task7img6.png)
+![image12](./images/task7img12.png)
 
 This shows us that the full location of the JAR files on the Android OS is `/data/user/0/com.badguy.mmarchiver/cache/zippier/formats/`, which confirms us piecing together the the directory was `/zippier/formats/`, since `/data/user/0/com.badguy.mmarchiver/cache/` is just where data for the app is stored 
+
+It also does indeed show that the `7z` format tries to get processed. We can infer from these logs that the `7z` JAR does not exist already on disk, so the app attempts to download it
+
+Download fails though because the hostname `dl.badguy.local` doesn't resolve to anything
+
+![image13](./images/task7img13.png)
 
 Alright great, we kind of see our avenue for RCE. Essentially, we have to somehow get the app to load our own JAR file, which we know how to make, since we know the name it needs to be, and where it needs to be located on the disk, which is at `/data/user/0/com.badguy.mmarchiver/cache/zippier/formats/`. The question is, how exactly do we get it there
 

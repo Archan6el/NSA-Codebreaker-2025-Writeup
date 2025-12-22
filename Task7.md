@@ -1023,7 +1023,7 @@ jar cf ../ZipFormat_7z_dex.jar classes.dex
 
 We now finally have the JAR we need
 
-Now using the below Python file, we can assemble our malicious zip file
+Now using the below Python code, we can assemble our malicious zip file
 
 ```python
 import zipfile

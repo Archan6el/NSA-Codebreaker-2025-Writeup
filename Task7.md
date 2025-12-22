@@ -360,7 +360,7 @@ public static String a(String str) {
 }
 ```
 
-The name of the class is basically the name of the JAR file, without the `.jar` extension
+So the name of the class is basically the name of the JAR file, without the `.jar` extension
 
 The type is also enforced here
 

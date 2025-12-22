@@ -1015,7 +1015,7 @@ Now that we have our Java files, I used the below commands to create the JAR fil
 First compiling the code into `.class` files (I compiled on Windows)
 
 ```bash
-javac -classpath Path\To\My\android-33\android.jar" -source 1.8 -target 1.8 -d out/ src/net/axolotl/zippier/*.java
+javac -classpath "Path\To\My\android-33\android.jar" -source 1.8 -target 1.8 -d out/ src/net/axolotl/zippier/*.java
 ```
 
 then converting the `.class` files into `.dex` files

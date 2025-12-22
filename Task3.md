@@ -31,7 +31,7 @@ Volatility will of course be our go to tool for this. We need a symbol table tho
 ~/dwarf2json/dwarf2json --elf vmlinux --system-map System.map --output symtable.json
 ```
 
-I first started with looking at processes with Volatility (make sure `--symbol-dirs` is pointing to the directory that you made your symbol table json file in)
+I first started with looking at processes with Volatility (make sure `--symbol-dirs` is pointing to the directory that you made your symbol table JSON file in)
 
 ```
 python3 ~/tools/volatility3/vol.py -f memory.dump --symbol-dirs=. linux.psaux.PsAux 
@@ -115,7 +115,7 @@ This is even more telling that we have something. It's Ghidra time!
 
 #### Go Go Ghidra
 
-Remember, from the `file` command output, the binary is stripped. However, we can pretty easily find the `main` function by trying to find `libc_start_main`
+Remember, from the `file` command output, the binary is missing section headers, meaning the original symbol and function names are unavailable, making the binary a little harder to reverse engineer. However, we can pretty easily find the `main` function by trying to find `libc_start_main`
 
 > Note I had already done some function renaming in the below disassembly snippets
 
@@ -478,9 +478,9 @@ system("service dnsmasq restart");
 
 It is very clear what this binary does. It reads some sort of file into memory, which it assumes is in base64 format, decodes it, decrypts the result, writes the result to `/etc/hosts`, and restarts `dnsmasq`
 
-This is pretty obviously a malware, with the base64 encoded file very likely containing malicious entries to have your system resolve domain names to malicious IPs. 
+This is pretty obviously a malware, with the base64 encoded file very likely containing encrypted malicious entries to have your system resolve domain names to malicious IPs. 
 
-The prompt asks us to "Submit a complete list of affected IPs and FQDNs, one per line", so we have to mimic this base64 decoding and decryption logic and use it on a file that was inputted to this malicious binary. 
+The prompt asks us to "submit a complete list of affected IPs and FQDNs, one per line", so we have to mimic this base64 decoding and decryption logic and use it on a file that was inputted to this malicious binary. 
 
 The question is, where do we find that said file? Well remember in the Ghidra disassembly, it writes the inputted file to memory. So the file's contents are very likely in our memory dump, specifically in one of the virtual memory sections we had already dumped for the `1552` process. 
 

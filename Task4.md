@@ -124,7 +124,7 @@ These can actually be seen at the beginning of `main` that I showed earlier
 
 Basically, there are variables containing brainrot strings, and variables containing what appear to be obfuscated blobs
 
-Whatever function is being called, my assumption was that it is somehow using the brainrot strings to deobfuscate the obfuscated blobs, or vice versa, with the obfuscated blobs deobfuscating the brainrot strings. 
+Whatever function is being called, my assumption was that it is somehow using the brainrot strings to deobfuscate the obfuscated blobs
 
 Going through the functions in Binja, we are able to find a likely culprit
 
@@ -841,6 +841,7 @@ Then, if everything worked as intended, we should end up with some sort of execu
 
 We can write a Python script to attempt to do exactly this
 
+To preface, I had dumped the output of the brainrot string into a file called `out.bin` and the content of the obfuscated data into a file called `"init_constructors_global.bin"`. I am also using "mimic" as my prefix since we are attempting to mimic the malware
 
 ```python
 #!/usr/bin/env python3
@@ -943,8 +944,6 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-
-To preface, I had dumped the output of the brainrot string into a file called `out.bin` and the content of the obfuscated data into a file called `"init_constructors_global.bin"`. I am also using "mimic" as my prefix since we are attempting to mimic the malware
 
 Additionally, from my comments, you can see that I tried to copy the Ghidra disassembly version of the same deobfuscation function that we already made. I was having issues when emulating Binja's version. 
 

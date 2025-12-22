@@ -449,7 +449,7 @@ case 2:
     return (ZipFormat) linkedHashMap.get(lowerCase);
 ```
 
-In summary, this code, given a compression format (like `7z` or `rar` for example), returns a `ZipFormat` instance, which implements the logic for handling that archive format. If it's not already loaded, it'll try to load it from disk. If it's not on disk, it'll try to download it
+In summary, this code, given a supported compression format (like `7z` or `tar` for example. We'll go over which specific ones later), returns a `ZipFormat` instance, which implements the logic for handling that archive format. If it's not already loaded, it'll try to load it from disk. If it's not on disk, it'll try to download it
 
 First it gets what the format type is
 

@@ -681,7 +681,7 @@ The question is, how exactly do we get it there
 
 Remember the path that all downloaded zip files go to that we found earlier?
 
-It was `/data/user/0/com.badguy.mmarchiver/cache/zippier/extract/`. This is pretty close to the directory those JAR files are in, which are at `/data/user/0/com.badguy.mmarchiver/cache/zippier/formats/`
+It was `/data/user/0/com.badguy.mmarchiver/cache/zippier/extract/`. This is pretty close to the directory that the JAR files are supposed to be in, which are at `/data/user/0/com.badguy.mmarchiver/cache/zippier/formats/`
 
 We just have to find a way to go up a directory, and have one of the inner zip file contents be `formats/net.axolotl.zippier.ZipFormat_[fromat type].jar`, which would get us into the `formats` directory
 

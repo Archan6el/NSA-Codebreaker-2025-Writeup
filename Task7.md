@@ -589,7 +589,7 @@ return jClass.getSimpleName();
 
 would just return `ZipFormat`
 
-`lowerCase` is just the format type in lowercase. So the full name of the JAR it looks for is
+`lowerCase` is just the format type in lowercase. So the full path of the JAR it looks for is
 
 `zippier/formats/net.axolotl.zippier.ZipFormat_[format type].jar`
 

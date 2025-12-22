@@ -1066,7 +1066,7 @@ with zipfile.ZipFile('exploit.zip', 'w') as z:
     z.writestr('...zip', inner_zip_data)
 ```
 
-Basically we first create the inner zip, which consists of the JAR file, named `formats/net.axolotl.zippier.ZipFormat_7z.jar`, and a dummy file named `pwn.7z` to trigger the exploit
+Basically we first create the inner zip, which consists of the JAR file named `formats/net.axolotl.zippier.ZipFormat_7z.jar`, and a dummy file named `pwn.7z` to trigger the exploit
 
 The outer zip, named `exploit.zip`, then consists of the inner zip contents above, but of course the inner zip is named `...zip`
 

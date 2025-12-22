@@ -376,7 +376,7 @@ r.c(newInstance, "null cannot be cast to non-null type net.axolotl.zippier.ZipFo
 
 This looks to be super interesting, and can be a potential RCE. It loads a JAR file and instantiates a class. If we can control what JAR is loaded, we can have a class that executes code on instantiation (basically has code that runs or calls a function in the constructor or in a static block), and can essentially run whatever we want
 
-So our next step is to find where this `a` function is called, and see if we can somehow control what JAR file is passed in
+So our next step is to find where this `Q3.d.a` function is called, and see if we can somehow control what JAR file is passed in
 
 We can find the code in a separate package, `D3`, in the `j` class
 

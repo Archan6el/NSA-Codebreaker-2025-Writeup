@@ -529,7 +529,7 @@ other code
 this.f4243g = jSONObject.optString("classpath", "net.axolotl.zippier");
 ```
 
-It checks for the `downloads` key in the JSON file for the zipArchiver class. If no value is set, it defaults to `downloads`. Spoiler alert, we know that the `downloads` key has the value `formats`. It also checks for the `classpath` key. If no value is set, it defaults to `net.axolotl.zippier` (another spoiler alert, the `classpath` key is indeed nonexistent)
+It checks for the `downloads` key in the JSON file for the zipArchiver class. If no value is set, it defaults to `downloads`. Spoiler alert, we know that the `downloads` key has the value `formats`. It also checks for the `classpath` key. If no value is set, it defaults to `net.axolotl.zippier`. Another spoiler alert, the `classpath` key is indeed nonexistent
 
 So `dVar.f4240d` is `zippier/formats` and `classpath` is `net.axolotl.zippier`
 

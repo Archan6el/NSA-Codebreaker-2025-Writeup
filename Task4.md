@@ -499,7 +499,7 @@ The offset `0x18` in an ELF is used to store the entry point. Standalone executa
 
 This check essentially performs an `execve` on the malware contents to run it as a standalone executable if it detects that it is one using the below function. It does this by writing the malware contents to a memfd, constructing the path to that fd using some obfuscated values, and then running `execve`
 
-I would go over this in detail, but this is very similar to how the binary dynamically loads a shared library, which we're going over next. Since it'd be redundant to do it now, I'll go over the specifics then. 
+I would go over this in detail, but this is very similar to how the binary dynamically loads a shared library, which we're going over next. Since it'd be redundant to do it now, I'll go over the specifics then
 
 ```c
 00005bf0  uint64_t execve_malware(int64_t arg1, uint64_t arg2)
@@ -565,6 +565,8 @@ I would go over this in detail, but this is very similar to how the binary dynam
 ```
 
 Otherwise, if not a standalone executable and is instead a shared library, the binary dynamically will load the shared library from a memfd
+
+Now, the specifics...
 
 First it creates a memfd
 

@@ -624,11 +624,11 @@ Looking at the `assets/zippier.json` file we can look at in jadx-gui, we can see
 }
 ```
 
-From this, we can confirm that there is no `classpath` key, so the JAR file prefix is indeed `net.axolotl.zippier`. This also confirms the `formats` directory being the directory the JARs are in. This all confirms that the JAR file absolute paths are in the format
+From this, we can confirm that there is no `classpath` key, so the JAR file prefix is indeed `net.axolotl.zippier`. This also confirms the `formats` directory being the directory the JARs are in. This all confirms that the JAR file paths are in the format
 
 `zippier/formats/net.axolotl.zippier.ZipFormat_[format type].jar`
 
-Do note though that all relative paths are resolved relative to the app’s cache directory on Android
+Do note though that all relative paths are resolved relative to the app’s cache directory on Android, which is `/data/user/0/com.badguy.mmarchiver/cache/` in our case as we saw in the logs from our earlier testing
 
 Additionally, based on the class loading logic we saw earlier, the name of the class from this JAR file that the app will try to instantiate is 
 

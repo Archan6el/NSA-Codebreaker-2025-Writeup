@@ -632,11 +632,13 @@ Additionally, based on the class loading logic we saw earlier, the name of the c
 
 `net.axolotl.zippier.ZipFormat_[format type]`
 
-The URL it tries to download JARs from is `"https://dl.badguy.local/zippier"`, and the supported formats are `"7z", "xz", "lzma", "bzip2", "gz", "tar"`
+The URL it tries to download JARs from is `"https://dl.badguy.local/zippier"`, which is not of much use to us
+
+However, the supported formats are `"7z", "xz", "lzma", "bzip2", "gz", "tar"`, which *is* important
 
 We can run some tests to confirm some of this though
 
-Let's try to trigger this JAR file format loading logic. We'll tweak our Python zip in a zip code to also include a dummy `7z` file
+Let's try to trigger this JAR file format loading logic. We'll tweak our Python zip in a zip code to also include a dummy `7z` file since we saw that that was one of the supported formats
 
 ```python
 import zipfile

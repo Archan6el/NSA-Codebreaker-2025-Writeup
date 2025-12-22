@@ -683,7 +683,7 @@ So what is located in `.init.constructors.global` and `.bss_secure_buffer`?
 
 We can use `readelf` for this
 
-`.bss_secure_buffer` appears to be the brainrot string
+`.bss_secure_buffer` appears to be the entire brainrot string we've been seeing bits and pieces of throughout our analysis
 
 ```
 readelf -x .bss_secure_buffer ./suspicious

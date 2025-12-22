@@ -673,7 +673,9 @@ Download fails though because the hostname `dl.badguy.local` doesn't resolve to 
 
 ![image13](./images/task7img13.png)
 
-Alright great, we kind of see our avenue for RCE. Essentially, we have to somehow get the app to load our own JAR file, which we know how to make, since we know the name it needs to be, and where it needs to be located on the disk, which is at `/data/user/0/com.badguy.mmarchiver/cache/zippier/formats/`. The question is, how exactly do we get it there
+Alright great, we kind of see our avenue for RCE. Essentially, we have to somehow get the app to load our own JAR file, which we know how to make since we know the name it needs to be, and where it needs to be located on the disk, which is at `/data/user/0/com.badguy.mmarchiver/cache/zippier/formats/`. There is no JAR on disk that handles `7z` as we saw, so we can try to upload our own `7z` JAR that does does whatever we want it to do 
+
+The question is, how exactly do we get it there
 
 #### The ZipSlip Strikes Back
 

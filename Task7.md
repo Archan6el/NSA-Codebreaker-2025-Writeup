@@ -683,9 +683,9 @@ Remember the path that all downloaded zip files go to that we found earlier?
 
 It was `/data/user/0/com.badguy.mmarchiver/cache/zippier/extract/`. This is pretty close to the directory that the JAR files are supposed to be in, which are at `/data/user/0/com.badguy.mmarchiver/cache/zippier/formats/`
 
-We just have to find a way to go up a directory, and have one of the inner zip file contents be `formats/net.axolotl.zippier.ZipFormat_[fromat type].jar`, which would get us into the `formats` directory
+We just have to find a way to go up a directory
 
-We're right back where we started though, finding some kind of way to go up a directory
+We're right back where we started, finding some kind of way to achieve directory traversal
 
 After a while, I finally found out how to achieve that coveted ZipSlip with the below test code
 

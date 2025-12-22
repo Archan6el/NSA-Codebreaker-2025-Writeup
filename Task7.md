@@ -64,7 +64,7 @@ public FileDownloadWorker(Context ctx, WorkerParameters params, PreferencesRepos
 
 More on the `zipArchiver` later
 
-If we scroll down a bit, we find the underlying code that writes the downloaded files to disk
+If we scroll down a bit, we find the code that from the function name, appears to write downloaded files to disk
 
 ```java
 private final File writeFileToDisk(ArchiveFile archiveFile, InputStream inputStream) {
@@ -108,7 +108,7 @@ I create a file called `test.zip` which just contains a text file, named `hi.txt
 
 Uploading it to the `Public` channel and then running the app (it prompts you to log in as a certain user when you do it the first time. I just used the credentials for `decimalpiglet81`), let's take a look at Logcat
 
-Looking at the app logs, filtering by the word "format", we can see that it detected our zip file, and interestingly, appears to unzip it since it seems to detect the txt file within it
+Looking at the app logs, filtering by the word "format", we can see that it detected our zip file, and interestingly, appears to unzip it since it seems to detect the `txt` file within it
 
 ![image2](./images/task7img2.png)
 
@@ -201,7 +201,7 @@ with zipfile.ZipFile('outside.zip', 'w', zipfile.ZIP_DEFLATED) as outer_zip:
 
 Ok, good work by the developers, it appears that ZipSlip, or at least the most common type, is blocked
 
-So at least from the simple kind of ZipSlip, we can't go up a directory. We can however go "down" a directory though
+So at least from the simple / basic kind of ZipSlip, we can't go up a directory. Maybe something a little trickier would work (ooooh foreshadowing). We can however go "down" a directory though
 
 ```python
 import zipfile

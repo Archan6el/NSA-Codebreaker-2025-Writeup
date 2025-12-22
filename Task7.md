@@ -999,7 +999,7 @@ Recall that `ZipFormat.java` is required and `ZipFormat_7z.java` must implement 
 ZipFormat zipFormat = (ZipFormat) newInstance;
 ```
 
-Now that we have our Java files, I used the below commands to create the JAR file. You have to compile it in a certain way though to ensure it can be loaded by Android. Essentially, turning Java source code into Android-loadable DEX inside a JAR
+Now that we have our Java files, I used the below commands to create the JAR file. You have to compile it in a certain way though to ensure it can be loaded by Android. Essentially, turning the Java source code into Android-loadable DEX inside a JAR
 
 First compiling the code into `.class` files
 

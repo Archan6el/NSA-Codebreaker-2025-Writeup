@@ -1067,7 +1067,7 @@ with zipfile.ZipFile('exploit.zip', 'w') as z:
 
 Basically we first create the inner zip, which consists of the JAR file, which we name `formats/net.axolotl.zippier.ZipFormat_7z.jar`, and a dummy file `pwn.7z` to trigger the exploit
 
-The outer zip, named `exploit.zip`, then consists of another zip named `...zip`, which contains the above contents
+The outer zip, named `exploit.zip`, then consists of the inner zip contents above, but of course the inner zip is named `...zip`
 
 Uploading this `exploit.zip`, we see that our exploit worked!
 

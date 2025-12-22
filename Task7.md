@@ -835,7 +835,7 @@ Having our file named `formats/net.axolotl.zippier.ZipFormat_7z.jar` means it wi
 
 `/data/user/0/com.badguy.mmarchiver/cache/zippier/formats/net.axolotl.zippier.ZipFormat_7z.jar`
 
-which is exactly where we want it to be based on our analysis from before. Also, remember that we indeed *are* allowed to write "down" a directory, since our before test having our text file location be `test/inside.txt` worked
+which is exactly where we want it to be based on our analysis from before. Also, remember that we indeed *are* allowed to write "down" a directory, since our earlier test having our text file location be `test/inside.txt` worked
 
 First off, let's make that malicious JAR file
 

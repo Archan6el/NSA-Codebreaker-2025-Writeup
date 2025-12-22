@@ -819,7 +819,7 @@ Then within `...zip`, we will have two files
 
 One file is named `pwn.7z`, which just triggers the JAR file loading logic
 
-The second file will be named `formats/net.axolotl.zippier.ZipFormat_7z.jar`, and will be a malicious JAR file. Why this name?
+The second file will be named `formats/net.axolotl.zippier.ZipFormat_7z.jar`, and will be a malicious JAR file. Why this name again?
 
 `...zip` allows us to traverse to 
 

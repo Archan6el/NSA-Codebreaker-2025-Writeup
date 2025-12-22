@@ -1,6 +1,6 @@
 # NSA-Codebreaker 2025
 
-These are my writeups of the 2025 NSA Codebreaker Challenges
+These are my writeups of the 2025 NSA Codebreaker tasks
 
 **Background:**
 

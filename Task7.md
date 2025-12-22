@@ -1066,7 +1066,11 @@ Uploading this `exploit.zip`, we see that our exploit worked!
 
 Submitting this zip file solves this task! 
 
-It was a really fun journey, and we learned a lot. The challenge coin has finally been acquired
+I will note that it doesn't really matter what your malicious JAR did. It appears that the task just checked to see that it was loaded in the first place
+
+It was a really fun journey, and we learned a lot. I wasn't expecting the android rev at the end here, but it was a welcome surprise 
+
+Alas, the challenge coin has finally been acquired
 
 **Response:**
 > With full access to the device we now have full visibility into this threat actor's entire infrastructure and capabilities. The US Military has everything they need to take decisive action against this threat. The security configurations of DoD networks worldwide are updated to guard against the exploited vulnerabilities, the adversary's infrastructure is destroyed, and the entire team of threat actors are identified. DIRNSA briefed the president on your work and how you enabled the mitigation of this threat. Great job!

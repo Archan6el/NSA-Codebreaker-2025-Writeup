@@ -10,6 +10,8 @@ These are my writeups of the 2025 NSA Codebreaker Challenges
 
 > You have just begun the first tour in your Development Program at NSA with the Cyber Response Team and are looking to make a big impact. You have always read about the threat of Nation-State Advanced Persistent Threats but now you have a chance to personally defend American interests against a sophisticated and capable adversary.
 
+I was pretty motivated to full solve this year's challenge. I only got to High Performer (task 5) during 2024's challenge due to time constraints (had to lock in to get my Sec+ cert). This year, I finally had all the time I needed to get the challenge done. Follow along as I go through the quest of getting that challenge coin.
+
 ## Tasks
 - [Task 0 - (Community of Practice, Discord Server)](Task0.md)
 - [Task 1 - Getting Started - (Forensics)](Task1.md)

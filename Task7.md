@@ -292,7 +292,7 @@ which **does not** start with `/data/user/0/com.badguy.mmarchiver/cache/zippier/
 
 Well, we're gonna have to put the ZipSlip on hold for a bit, and see what else is interesting in the disassembly
 
-#### RCE Identified
+#### Identifying RCE
 
 Again in the `Q3` package, if we look at the `d` class, we find something really interesting, specifically in the function named `a`
 
@@ -322,7 +322,7 @@ public static void a(d dVar, File file) {
 
 This function dynamically loads and instantiates a class from a JAR file using a custom ClassLoader
 
-First it returns a ClassLoader based on the passed in JAR file, with the JAR file being referenced by `absolutePath`
+First it returns a ClassLoader based on the passed in JAR file, with the JAR file being referenced by `absolutePath`, which it gets from the passed in `File file` parameter
 
 ```java
 _init_$lambda$1 = ZipArchiver._init_$lambda$1((ZipArchiver) jVar.f1105e, absolutePath);
@@ -374,7 +374,7 @@ So the loaded class must implement or extend `net.axolotl.zippier.ZipFormat` whi
 r.c(newInstance, "null cannot be cast to non-null type net.axolotl.zippier.ZipFormat");
 ```
 
-This looks to be super interesting, and can be a potential RCE. It loads a jar file and instantiates a class. If we can control what jar is loaded, we can have a class that executes code on instantiation (basically has code that runs or calls a function in the constructor or in a static block), and can essentially run whatever we want
+This looks to be super interesting, and can be a potential RCE. It loads a JAR file and instantiates a class. If we can control what JAR is loaded, we can have a class that executes code on instantiation (basically has code that runs or calls a function in the constructor or in a static block), and can essentially run whatever we want
 
 So our next step is to find where this `a` function is called, and see if we can somehow control what JAR file is passed in
 
@@ -985,7 +985,11 @@ which calls some functions, `deleteArchives()` and `deleteApp()`. Since this is 
 
 Based on the names of the functions, it just tries to delete a bunch of things to interfere with the bad actors' archives. However, you can have your `ZipFormat_7z.java` do whatever you want it to do. For example, more useful functionality would be establishing a reverse shell, or downloading the archived files instead of deleting them
 
-Also, `ZipFormat.java` was found to be required from testing since the app expects the class to implement `uncompress` and `getExtension`, which makes sense, since this class is supposed to actually uncompress content
+Recall that `ZipFormat.java` is required and `ZipFormat_7z.java` must implement it because of this code we saw earlier in the class loader logic that enforces the type
+
+```java
+ZipFormat zipFormat = (ZipFormat) newInstance;
+```
 
 Now that we have our Java files, I used the below commands to create the JAR file. You have to compile it in a certain way though to ensure it can be loaded by Android. Essentially, turning Java source code into Android-loadable DEX inside a JAR
 

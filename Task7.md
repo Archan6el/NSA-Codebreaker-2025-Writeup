@@ -1012,16 +1012,16 @@ ZipFormat zipFormat = (ZipFormat) newInstance;
 
 Now that we have our Java files, I used the below commands to create the JAR file. You have to compile it in a certain way though to ensure it can be loaded by Android. Essentially, turning the Java source code into Android-loadable DEX inside a JAR
 
-First compiling the code into `.class` files
+First compiling the code into `.class` files (I compiled on Windows)
 
 ```bash
-javac -classpath "C:\Users\myk06\AppData\Local\Android\Sdk\platforms\android-33\android.jar" -source 1.8 -target 1.8 -d out/ src/net/axolotl/zippier/*.java
+javac -classpath Path\To\My\android-33\android.jar" -source 1.8 -target 1.8 -d out/ src/net/axolotl/zippier/*.java
 ```
 
 then converting the `.class` files into `.dex` files
 
 ```bash
-java -cp "C:\Users\myk06\AppData\Local\Android\Sdk\build-tools\33.0.2\lib\d8.jar" com.android.tools.r8.D8 --output out_dex ZipFormat_7z.jar
+java -cp "Path\To\My\Android\Sdk\build-tools\33.0.2\lib\d8.jar" com.android.tools.r8.D8 --output out_dex ZipFormat_7z.jar
 ```
 
 Then packaging those `.dex` files into a JAR

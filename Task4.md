@@ -100,7 +100,7 @@ Although Binja presents the value as coming from a string literal, the code is a
 
 Well, what exactly is the function it's trying to call?
 
-Well, we can piece that together from some context clues. My variable renaming sort of spoils it, but we can see that one of the parameters is `&brainrot2`
+We can piece that together from some context clues. My variable renaming sort of spoils it, but we can see that one of the parameters is `&brainrot2`
 
 Also, `r15_3` is assigned to what I call an obfuscated blob. 
 

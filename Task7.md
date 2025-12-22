@@ -228,7 +228,7 @@ Since this worked, that means that, assuming that there was a directory named `t
 
 Going back to jadx-gui, let's try to find where the logic is that checks for the ZipSlip, just so that we can understand it better
 
-#### Rev time
+#### Android rev time
 
 It appears that all of the code revolving around the Zip logic is apart of the `Q3` package
 

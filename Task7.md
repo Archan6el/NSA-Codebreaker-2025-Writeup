@@ -176,7 +176,7 @@ which is basically just
 /data/user/0/com.badguy.mmarchiver/cache/zippier/exploited/inside.txt
 ```
 
-This allows us to escape by going up one directory, and either writing stuff in that directory, or as in the above example, writing to a different directory, `exploited`, which is at the same level as `extracted`. This gets really scary if `exploited` is a directory that already exists, since you could be writing data to a directory that developers don't want you to write to
+This allows us to escape by going up one directory, and either writing stuff in that directory, or as in the above example, writing to a different directory, `exploited`, which is at the same level as `extract`. This gets really scary if `exploited` is a directory that already exists, since you could be writing data to a directory that developers don't want you to write to
 
 We can test this by tweaking our Python script a bit
 

@@ -1030,7 +1030,7 @@ LAB_00108e1d:
 
 From my renamed function names, we can see what this function is doing
 
-As a note, [RC4](https://en.wikipedia.org/wiki/RC4) is a keystream cipher. It encrypts/decrypts data byte-by-byte by XORing it with a pseudorandom keystream
+[RC4](https://en.wikipedia.org/wiki/RC4) is a keystream cipher. It encrypts/decrypts data byte-by-byte by XORing it with a pseudorandom keystream
 
 It initializes an RC4 internal state using `skibidi` as the key, preparing it to generate a keystream
 
@@ -1344,6 +1344,8 @@ We can mimic this decryption logic with Python, but we have to decrypt each `DAT
 Also, as for the contents of the `DATS` themselves, we can find them in Ghidra. Below is a small example:
 
 ![image2](./images/task4img2.png)
+
+The script I ended up making is below
 
 ```python
 

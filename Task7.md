@@ -18,7 +18,7 @@ Again, getting this all setup was pretty annoying
 
 #### Setup:
 
-Firstly, you need the Mattermost setup that you had running before
+Firstly, you need the Mattermost setup that you had running before for Task 6
 
 Now, to run the apk, you can use Android Studio, or at least, that's what I did
 

@@ -778,7 +778,7 @@ This line
 File file2 = new File((File) this.f4231c, b4.c.a(file.getAbsolutePath()));
 ```
 
-is basename extraction, as seen when we look at the `a()` function's code. We actually already saw this same function already earlier when looking at what the name of the class file that gets instantiated is
+is basename extraction, as seen when we look at the `a()` function's code. We actually already saw this same function earlier when looking at what the name of the class that gets instantiated is
 
 ```java
 public static String a(String str) {

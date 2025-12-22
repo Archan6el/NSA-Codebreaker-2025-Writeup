@@ -83,7 +83,7 @@ Firstly, in the `main` function, there's some weird sections like below
 
 Firstly, since you'll see it a lot later on, `cooked` is a label that essentially just contains some code that ends / exits the program. Whenever the binary reaches some sort of fail state, or you fail a debugger check, it jumps to this label.
 
-Ignoring my renaming of some labels, variables, and functions, the interesting thing is `r14_1` being assigned a value extracted from the memory of a brainrot string literal.
+Ignoring my renaming of some labels, variables, and functions, the interesting thing is `r14_1` being assigned to what looks to be a value extracted from the memory of a brainrot string literal.
 
 ```c
 r14_1 = (*"to griddy dance because this man…")[0].q
@@ -96,7 +96,7 @@ if (r14_1(&brainrot2, 0x49, r15_3, 0x13) != 0)
     goto cooked
 ```
 
-This is pretty clear that it's trying to hide a function by using a function pointer, with the brainrot string being used to identify that function pointer
+Although Binja presents the value as coming from a string literal, the code is actually reinterpreting the first 8 bytes of that memory as a function pointer. This function pointer is then invoked indirectly, effectively hiding the real function being called and complicating our static analysis.
 
 Well, what exactly is the function it's trying to call?
 

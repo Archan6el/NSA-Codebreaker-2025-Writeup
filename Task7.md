@@ -612,7 +612,7 @@ else {
 
 An important note is that the location it attempts to download the new JAR into is **the same** location that it tries to check for the existing JAR in
 
-The actual downloading itself doesn't lead anywhere really
+The actual downloading itself doesn't lead anywhere really though
 
 Looking at the `assets/zippier.json` file we can look at in jadx-gui, we can see what kind of format types the app expects, where it tries to download the JARs from if it's not on disk, and if the `classpath` key exists.
 

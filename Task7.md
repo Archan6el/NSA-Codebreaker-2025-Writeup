@@ -226,7 +226,7 @@ In this code, we have the file name of the text file in the inner zip be named `
 
 Since this worked, that means that, assuming that there was a directory named `test` within the `extract` directory, we would be able to write files to it. This is pretty useless to us though, for now...
 
-Going back to jadx-gui, let's try to find where the logic is that checks for the ZipSlip
+Going back to jadx-gui, let's try to find where the logic is that checks for the ZipSlip, just so that we can understand it better
 
 #### Rev time
 

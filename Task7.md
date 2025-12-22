@@ -1066,7 +1066,7 @@ Uploading this `exploit.zip`, we see that our exploit worked!
 
 Submitting this zip file solves this task! 
 
-I will note that it doesn't really matter what your malicious JAR did. It appears that the task just checked to see that it was loaded in the first place
+I will note that it doesn't really matter what your malicious JAR did. It appears that the task just checked to see that it was loaded at all to accept your submission
 
 It was a really fun journey, and we learned a lot. I wasn't expecting the android rev at the end here, but it was a welcome surprise 
 

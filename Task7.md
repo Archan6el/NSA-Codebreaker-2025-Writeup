@@ -511,7 +511,15 @@ String optString = jSONObject.optString("downloads", "downloads");
 r.d(optString, "optString(...)");
 File file3 = new File(optString);
 file3 = file3.isAbsolute() ? file3 : new File(file, file3.getName());
-
+try {
+    if (!file3.exists() && !file3.mkdirs()) {
+        throw new SecurityException("mkdirs() returned null");
+    }
+    this.f4240d = file3;
+    logger.info("created format download directory " + file3);
+} catch (SecurityException e5) {
+    logger.error("failed to create format download directory " + file3 + ": " + e5);
+}
 ...
 ...
 other code
@@ -1053,6 +1061,7 @@ The outer zip, named `exploit.zip`, then consists of another zip named `...zip`,
 Uploading this `exploit.zip`, we see that our exploit worked!
 
 ![image9](./images/task7img9.png)
+![image11](./images/task7img11.png)
 ![image10](./images/task7img10.png)
 
 Submitting this zip file solves this task! 

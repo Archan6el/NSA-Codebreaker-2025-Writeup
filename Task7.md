@@ -593,8 +593,6 @@ would just return `ZipFormat`
 
 `zippier/formats/net.axolotl.zippier.ZipFormat_[format type].jar`
 
-We will see how we get this soon
-
 Moving on, if the JAR does not exist on disk it tries to download it, which is basically what the rest of the code is
 
 ```java

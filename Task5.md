@@ -234,7 +234,7 @@ bool Comms::application_handshake(void)
 
 `DAT_0010a13a`, which is the message, is the string `"REQCONN"`, and `DAT_0010a130` which is the response it's expecting is `"REQCONN_OK"`. 
 
-![image3](./images/task5img3.png)
+![image4](./images/task5img4.png)
 
 Also to save some time, I will just note that it expects both of these messages to have the same `dec0dec0ffee` header from before. `send_message` always prepends the hex `dec0dec0ffee` to the beginning of each message
 

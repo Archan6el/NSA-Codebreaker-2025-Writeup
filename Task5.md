@@ -232,7 +232,7 @@ bool Comms::application_handshake(void)
 }
 ```
 
-`DAT_0010a13a`, which is the message, is the string `"REQCONN"`, and `DAT_0010a130` which is the response it's expecting is `"REQCONN_OK"`. 
+`DAT_0010a13a`, which is the message, is the string `"REQCONN"`, and `DAT_0010a130` which is the response it's expecting, is `"REQCONN_OK"`. 
 
 ![image4](./images/task5img4.png)
 

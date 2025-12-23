@@ -156,7 +156,7 @@ From this, `inside.txt` is likely at `/data/user/0/com.badguy.mmarchiver/cache/z
 
 Ok, well, how can we exploit this?
 
-Well, since it does process zip files inside of zip files, the first thing that comes to mind is a **ZipSlip** vunerability, which Android themselves even warns of [here](https://developer.android.com/privacy-and-security/risks/zip-path-traversal)
+Well, since it does process zip files inside of zip files, I googled any vulnerabilities that may involve that. The first thing that came up was what's called a **ZipSlip** vunerability, which Android themselves even warns of [here](https://developer.android.com/privacy-and-security/risks/zip-path-traversal)
 
 For our above example, essentially, it's done by having the inner zip be named something like `../exploited` instead of `inside.zip`. So instead of `inside.txt` being written to 
 

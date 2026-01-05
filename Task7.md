@@ -32,7 +32,7 @@ Now we can really start
 ```
 netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=8065 connectaddress=172.30.48.197 connectport=8065
 ```
-> and then connect in the app using the IP `10.0.2.2` on port `8065`, since `10.0.2.2` is Android Studio's loopback address basically
+> and then connect in the app using the IP `10.0.2.2` on port `8065`, since `10.0.2.2` is Android Studio's address for the machine that is running the emulator, which in our case, is our Windows host
 
 #### Understanding the App
 

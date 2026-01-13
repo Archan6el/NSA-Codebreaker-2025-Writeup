@@ -138,7 +138,7 @@ rm -f /bin/console
 rm -f /etc/runlevels/default/console
 ```
 
-However, `etc/apk/macwszvxno` still remains as we know, and thus is the malicious artifact the task is looking for. 
+However, `etc/apk/macwszvxno` still remains as we know, and thus is the malicious artifact the task is looking for. The file is still on the system because instead of deleting `/etc/apk/macwszvxno`, the bad actor appears to have mis-inputted, attempting to delete `etc/apk/macwszvxno` instead, missing that first `/`. This tries to delete from a directory named `etc` that is within the current working directory, instead of from `/etc`. Costly mistake, since it allowed us to find this artifact
 
 **Response:**
 > Great job finding that artifact! Let's report what we found to DAFIN-SOC leadership.

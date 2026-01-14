@@ -86,7 +86,7 @@ PID     Process Start   End     Flags   PgOff   Major   Minor   Inode   File Pat
 1552    4       0x7ffecddad000  0x7ffecddae000  r-x     0x0     0       0       0       [vdso]  pid.1552.vma.0x7ffecddad000-0x7ffecddae000.dmp
 ```
 
-Since some of these memory sections are part of what is some binary executable, we can cat these sections together until we get an executable file. We can tell we're on the right track since we can cat the first section and see an ELF header
+Since some of these memory sections are part of what is some binary executable, we can cat these sections together until we get an executable file. As seen below, the first `memfd:x (deleted)` section shows us an ELF header
 
 ![image1](./images/task3img1.png)
 

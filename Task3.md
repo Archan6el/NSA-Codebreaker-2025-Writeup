@@ -492,16 +492,16 @@ grep -R --binary-files=text -E '[A-Za-z0-9+/]{20,}={0,2}' .
 
 ![image2](./images/task3img2.png)
 
-The full Base64 was in the contents of the malicious binary itself, or more accurately, one of the memory sections that made up the malicious binary that was part of the `cat` command from earlier. The actual memory dump file it was in was `pid.1552.vma.0x557c6ca3d000-0x557c6ca3e000.dmp`. 
+The full base64 was in the contents of the malicious binary itself, or more accurately, one of the memory sections that it consists of, which was part of the `cat` command from earlier. The actual memory dump file it was in was `pid.1552.vma.0x557c6ca3d000-0x557c6ca3e000.dmp`. 
 
 ![image3](./images/task3img3.png)
 
 
 Now we have the inputted file contents! Specifically:
 
-`
+```text
 My2sZXIL9BrnA2AkQMrZFjmo39O7SHzhl05PAkyQGOkXbxlxB/w+01koZEnH93AS94B5HdlPiN8eAjh83Aipe0kVdv0U3MtNaCoTs4g0HOL6HkqEErmqlYeqAKo2jVJWSBCSEo7bcEf3w3S2CgKv/I+GZrMUKRg6Xvl5sa88Zd3aYagaKJjUcXjARJDV6PLIZIU+lqi2lsRMwShywo8mF7tyyMltNLinfKU0HiYDLJ0fqb2Cj3Eh3ka+zTQe+YYPwV5NGl3aIukD8ILPpaJZ3x5aW0zwl3IK6JDMtnMw8RiS/67GVKZSt67PlhVZ3kKB4hhux7M2SJL+8sUQpXvA9de1zDHSE4qG1Y0KNPPca1ZNPaHZRw+Gj5e0ELAau5qHo21l632in9L8cl/r3Fp9JCGza7G8nrSSuR+BNveAkNkKZO6WSCLX8ht6+PBuPWtzlE+mVCZ2Gp92ru0+KHMV6s0mTaXHNmzlb/+j3pzw+hbkE5b3sbQl+jV/huEOe9Jat/AFFOWwB4AldlQ7EKoAz9NOHlRM9TKZkT9w3cAioHU8dnBQBewS4pz5m4Bms2B125Qrfov6DVSxtzF7/3W0l7qCtR2xAVF5Lx9TrnXX02dM/ttnpjk+aDuyHoM/9sbU+etN2WooIyLYnmtLq9Q7D4yqf7AkUh5w/Q7/DwJ1Z6GkN7R4PjVSvtAhQNyhqtJSvXaXDGsBcIpzkw4TSgnIsTFKnu0Nd/jHRi7m5/TSCKsN7M312Uiuea8jCFt6991xR8/45ZlA0FIP0I63kjebO+PZyuEmFYLkMgSwgTEXqqs0aDgyqGuIkq2DqHnIVe8uYGsy5ZljGeqCJ3qdDcnbsPmJhnG8TjhABWT5NafsISXEpVQqgs08NcOII/dDADNUI9Eoyyup8aKzNPFVVe6NYT3JUL3iqrhzMo82je3D5L1MiF5MwYk6NJtS/8llJ5HLT9wEWBs8FKQKuvaKl7zkJOtAQfm+FCWfpgYbRh+c3ULnJhgNIHvWCb3g6/gxdMmqUDiWrhU37TqxoumHGfc6za+Gnrz9ZalyPyZYp9hwFMK76MdJZLdfxaXjlnmJc57B1swGDJT6P01ZNqTUWy6047OkI8Ac5JrpivUWwHq35eyaVmfthXQUA3jjaOGudXRWS+xb+x11NlnPIO/ETmw2BbGTdBDSzMqbF4w6aVdfbbIOl2mxh4yLEDT012lJ9cxrtBcAgY++8VzNZVU/KA/bX8eTTEYFWKDCYlT9vQEIuWiEjPC01ybGacXpqKXsLqJVDbahTymWWvv7TRmQh1ycfgR/C2HZTfq3YGuFwX/nG3qRiXBulQzJx5rGRaBZsUcvaBYZ8ziFzz4/x+wJb4Hs9vQqJ7Uy7NnP/dJ7+whVfX//6TDwTHXU5VhgvJgbCkpjvxGBdquHr5jCfvgheDk4+48nEaaTx+R2X5GDF347WrITvVlyR0+J2FvCB3hmGPmTQjDyjtfDVI5UtNeo16lMim/t6/j+NkXJ+Sxfv8kNafC+MTIoYpBonWkDSje0XJCeFjxuFcu8TirRrO2vZvR/LBZNeTeRTqIjQxUBiF+EpAc7haRJJ9nDNjoqYtBdr+bO69ASqzN88P39vQ00jbgRWOLjT4IyPVITYiCVetjizcqNUdccQbSwRAv/LdaEew==
-`
+```
 
 I save the contents into a file I name `sussy`
 
